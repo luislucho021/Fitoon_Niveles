@@ -12,7 +12,7 @@ public class PlayerControl : MonoBehaviour
     Animator anim;
     public GameObject trailBoost;
 
-    [SerializeField] private bool autoRun = false;
+    //[SerializeField] private bool autoRun = false;
 
 
     private Countdown countdownTimer;

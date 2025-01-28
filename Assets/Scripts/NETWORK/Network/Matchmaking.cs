@@ -52,7 +52,7 @@ public class Matchmaking : MonoBehaviour
 
     public void StartRaceLobby()
     {
-        Lock();
+        //Lock();
     }
 
     private async Task Lock()

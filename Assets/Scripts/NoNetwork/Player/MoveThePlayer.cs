@@ -17,7 +17,7 @@ public class MoveThePlayer : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed;
     public float rotationSpeed;
-    float speedBoost = 1f;
+    //float speedBoost = 1f;
     Vector3 moveDirection;
     [SerializeField] TextMeshProUGUI velocityText;
 
