@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5925065127458575209}
   - component: {fileID: 3097207163736026220}
   m_Layer: 0
-  m_Name: caraPrueba
+  m_Name: CaraPrueba
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

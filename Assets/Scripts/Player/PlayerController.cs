@@ -25,7 +25,6 @@ public class PlayerController : NetworkBehaviour
     private Countdown countdownTimer;
     private FinishController finishController;
     private GoalController goalController;
-    private FloatingJoystick joystick;
     private Rigidbody rB;
     private NetworkData netData;
     private Camera mainCamera;
@@ -121,9 +120,6 @@ public class PlayerController : NetworkBehaviour
     {
         if (IsOwner)
         {
-            joystick = FindObjectOfType<FloatingJoystick>();
-            joystick.enabled = true;
-            joystick.GetComponentInChildren<Transform>().gameObject.SetActive(true);
 
             mainCamera = Camera.main;
 
@@ -219,8 +215,8 @@ public class PlayerController : NetworkBehaviour
             if (MovementAllowed()) goalController.UpdatePosition();
 
             //The player moves instantly on his client
-            movementV = Math.Clamp( Mathf.Round(joystick.Vertical * 10) / 10 + Mathf.Round(Input.GetAxis("Vertical") * 10) / 10 , 0, 1 );
-            movementH = Math.Clamp( Mathf.Round(joystick.Horizontal * 10) / 10 + Mathf.Round(Input.GetAxis("Horizontal") * 10) / 10 , -1, 1 );
+            movementV = Math.Clamp(Mathf.Round(Input.GetAxis("Vertical") * 10) / 10 , 0, 1 );
+            movementH = Math.Clamp(Mathf.Round(Input.GetAxis("Horizontal") * 10) / 10 , -1, 1 );
 
             movementV = Mathf.Clamp01(movementV);
             if (autoRun) movementV = 1f;
