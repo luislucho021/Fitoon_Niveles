@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6109605210080716433}
   - component: {fileID: 6836234440733687487}
   - component: {fileID: 4820345827670704063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Quicksand
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 6109605210080716437}
   m_LocalRotation: {x: 0, y: -0.19821331, z: 0, w: 0.9801589}
   m_LocalPosition: {x: 7.9, y: -1.43, z: 173.43}
-  m_LocalScale: {x: 3.3333335, y: 2, z: 3.3333335}
+  m_LocalScale: {x: 4, y: 2, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

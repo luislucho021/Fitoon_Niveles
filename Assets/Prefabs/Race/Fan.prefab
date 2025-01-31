@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 6814630686478945444}
   - component: {fileID: 2860740416586719252}
   - component: {fileID: 4206646705262917487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turbine.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &6814630686478945444
 Transform:
@@ -94,12 +94,12 @@ GameObject:
   - component: {fileID: 8121439272074670096}
   - component: {fileID: 4479765721281762951}
   - component: {fileID: 4783001272963526408}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turbine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &8121439272074670096
 Transform:
@@ -177,12 +177,12 @@ GameObject:
   - component: {fileID: 8121439272770158361}
   - component: {fileID: 4479765720364571022}
   - component: {fileID: 4783001271459028993}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turbine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &8121439272770158361
 Transform:
@@ -259,12 +259,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7860449433147563250}
   - component: {fileID: 7682952268283222097}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Turbine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &7860449433147563250
 Transform:
@@ -311,12 +311,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7682952267677536576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 123
   m_IsActive: 1
 --- !u!4 &7682952267677536576
 Transform:
@@ -325,9 +325,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7682952267677536579}
-  m_LocalRotation: {x: -0, y: -0, z: -1, w: 0.0000014603138}
+  m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
   m_LocalPosition: {x: 27.2, y: -2.3, z: 5.8}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 1.7319854, y: 1.7319854, z: 1.7319854}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7860449433147563250}

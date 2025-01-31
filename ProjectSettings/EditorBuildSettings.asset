@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NivelesAR/DragonRoadsAR.unity
     guid: 325b9f9acc5a0644baf72fa932f8d087
   - enabled: 0
-    path: Assets/Scenes/NivelesAR/QuickSandsAR.unity
+    path: Assets/Scenes/NivelesAR/RollingPierAR.unity
     guid: ea581948e98be264ca3988bb73443088
   - enabled: 1
     path: Assets/Scenes/NivelesAR/SpaceTravelAR.unity
@@ -39,7 +39,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Tests/Ajustes.unity
     guid: aecf587b8151a2a42ac9b5f93f5eae09
   - enabled: 1
-    path: Assets/_POINTER/PUNTERO.unity
+    path: Assets/Scenes/Tests/Pointer/PUNTERO.unity
     guid: afed212571a198c4396a5272993ff0da
   - enabled: 1
     path: Assets/Scenes/Classified.unity

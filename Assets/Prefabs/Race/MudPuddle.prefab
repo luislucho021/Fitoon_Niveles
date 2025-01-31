@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 779929049350718761}
   - component: {fileID: 55274399863577863}
   - component: {fileID: 2089175698809510919}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MudPuddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,9 +95,9 @@ GameObject:
   - component: {fileID: 1908601208305302041}
   - component: {fileID: 752977119031351903}
   - component: {fileID: 3044067693256231252}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MudPuddleCollider
-  m_TagString: EffectArea
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
