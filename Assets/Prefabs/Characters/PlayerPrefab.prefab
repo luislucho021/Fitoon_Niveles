@@ -2095,7 +2095,6 @@ MonoBehaviour:
   speedMultiplier: 1
   speedBoost: 1
   trailBoost: {fileID: 3110000095041442472}
-  autoRun: 0
   charactersList:
   - {fileID: 11400000, guid: 3dee8a9500c042247ab3598f63f10977, type: 2}
   - {fileID: 11400000, guid: 61929e2d12e1855459c6d5085e64d7e6, type: 2}
