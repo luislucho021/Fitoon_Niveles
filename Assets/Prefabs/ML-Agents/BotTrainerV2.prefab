@@ -84,6 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062c04806adbd4e42a4ac03f44ca5128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentIndexCache: 255
+  _addedNetworkObject: {fileID: 0}
+  _networkObjectCache: {fileID: 0}
   anim: {fileID: 0}
   trailBoost: {fileID: 8613211236846804281}
 --- !u!114 &5348476070930941701

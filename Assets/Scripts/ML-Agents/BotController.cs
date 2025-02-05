@@ -2,10 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.Netcode;
-using Unity.Services.Authentication;
 using UnityEngine;
-using UnityEngine.Networking;
+using FishNet.Connection;
+using FishNet.Object;
+
 
 public class BotController : NetworkBehaviour
 {
@@ -53,15 +53,15 @@ public class BotController : NetworkBehaviour
         movementSpeed -= UnityEngine.Random.Range(0f, movementSpeed / 3);
     }
 
-    public override void OnNetworkDespawn()
+    /*public override void OnNetworkDespawn()
     {
         base.OnNetworkDespawn();
         Destroy(gameObject);
-    }
+    }*/
 
     private void Update()
     {
-        if (IsServer)
+        if (IsServerInitialized)
         {
             if (anim.gameObject.activeSelf)
             {
@@ -69,12 +69,12 @@ public class BotController : NetworkBehaviour
                 {
                     anim.SetBool("isRunning", true);
                     anim.SetFloat("playerSpeed", 0.3f + new Vector3(rB.velocity.x, 0, rB.velocity.z).magnitude / 10);
-                    UpdateAnimationParametersClientRpc(anim.GetBool("isRunning"), anim.GetFloat("playerSpeed"));
+                    //UpdateAnimationParametersClientRpc(anim.GetBool("isRunning"), anim.GetFloat("playerSpeed"));
                 }
                 else
                 {
                     anim.SetBool("isRunning", false);
-                    UpdateAnimationParametersClientRpc(anim.GetBool("isRunning"), anim.GetFloat("playerSpeed"));
+                    //UpdateAnimationParametersClientRpc(anim.GetBool("isRunning"), anim.GetFloat("playerSpeed"));
                 }
             }
         }
@@ -92,12 +92,12 @@ public class BotController : NetworkBehaviour
 
     }
 
-    [ClientRpc]
+    /*[ClientRpc]
     private void UpdateAnimationParametersClientRpc(bool isRunning, float speed)
     {
         anim.SetBool("isRunning", isRunning);
         anim.SetFloat("playerSpeed", speed);
-    }
+    }*/
 
     void FixedUpdate()
     {

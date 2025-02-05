@@ -56,13 +56,13 @@ public class CreateBots : MonoBehaviour
     {
         spawnpointData.Clear();
 
-            foreach (var gO in FindObjectsOfType(typeof(GameObject)) as GameObject[])
+        foreach (var gO in FindObjectsOfType(typeof(GameObject)) as GameObject[])
+        {
+            if (gO.tag == "SpawnPoint")
             {
-                if (gO.tag == "SpawnPoint")
-                {
-                    spawnpointData.Add(new SpawnpointData(gO.transform.position, false, ""));
-                }
+                spawnpointData.Add(new SpawnpointData(gO.transform.position, false, ""));
             }
+        }
     }
 
     public void FillSpawnpointsWithBots()

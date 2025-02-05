@@ -48,11 +48,6 @@ public class NPCController : MonoBehaviour
         anim.SetBool("isRunning", false);
     }
 
-    private void StartCountdownClientRpc()
-    {
-        countdownTimer.StartCountdown();
-    }
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
