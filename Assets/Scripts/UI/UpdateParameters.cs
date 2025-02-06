@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class UpdateParameters : MonoBehaviour
 {
-    SaveData save;
     public TextMeshProUGUI coinsText;
     public TextMeshProUGUI pointsText;
     public TextMeshProUGUI pointsLeftText;
@@ -21,15 +20,14 @@ public class UpdateParameters : MonoBehaviour
 
     private void Start()
     {
-        save = GetComponent<SaveData>();
-        save.ReadFromJson();
+		SaveData.ReadFromJson();
         UpdateMoneyText();
         UpdatePoints();
     }
 
     public void UpdateMoneyText()
     {
-        coinsText.text = save.player.normalCoins.ToString();
+        coinsText.text = SaveData.player.normalCoins.ToString();
         
     }
 
@@ -42,28 +40,28 @@ public class UpdateParameters : MonoBehaviour
         //A modo de testing, para subir puntos
         if (Input.GetKeyUp(KeyCode.P))
         {
-            save.player.points += 50;
+			SaveData.player.points += 50;
             UpdatePoints();
         }
         else if (Input.GetKeyUp(KeyCode.O))
         {
-            save.player.points -= 50;
+			SaveData.player.points -= 50;
             UpdatePoints();
         }
     }
     public void UpdatePoints()
     {
-        currentLevel = CalculateLevelForXP(save.player.points);
+        currentLevel = CalculateLevelForXP(SaveData.player.points);
         levelText.text = currentLevel.ToString();
 
         int totalXPNeededForNextLevel = CalculateTotalXPNeededForNextLevel(currentLevel);
-        int pointsNeededForNextLevel = totalXPNeededForNextLevel - save.player.points;
+        int pointsNeededForNextLevel = totalXPNeededForNextLevel - SaveData.player.points;
 
-        pointsText.text = $"{save.player.points}/{totalXPNeededForNextLevel} xp";
+        pointsText.text = $"{SaveData.player.points}/{totalXPNeededForNextLevel} xp";
         pointsLeftText.text = $"{pointsNeededForNextLevel} left";
 
         xpSlider.maxValue = totalXPNeededForNextLevel;
-        xpSlider.value = save.player.points;
+        xpSlider.value = SaveData.player.points;
     }
 
     //Ejemplo con base 100 y factor 1.5: Para llegar al nivel 1 hacen falta 0+100 puntos. Nivel 2: 100+150 puntos. Nivel 3: 100+150+225 puntos...

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5897592, g: 0.8574704, b: 0.9798402, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -67911,8 +67911,6 @@ GameObject:
   - component: {fileID: 1130866454960105791}
   - component: {fileID: 6683078783192964587}
   - component: {fileID: 6982815411315896642}
-  - component: {fileID: 6982815411315896645}
-  - component: {fileID: 6982815411315896651}
   - component: {fileID: 6982815411315896650}
   - component: {fileID: 6982815411315896644}
   - component: {fileID: 6982815411315896648}
@@ -79452,40 +79450,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81ce14bbaa2741478195ffd2a46fda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectado: 0
   rotationIntensity: 2
   velocityText: {fileID: 1637405505}
   cadenceText: {fileID: 762463291}
   animCadenceText: {fileID: 623151725}
   sampleRate: 128
   distanciaPaso: 0.67
---- !u!114 &6982815411315896645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130866454960105776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4194d1097cce0c4b955b9ef1a50f77a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    username: 
-    normalCoins: 0
-    points: 0
-    purchasedSkins: 
-    purchasedShoes: 
-    purchasedColors: 
-    playerCharacterData:
-      characterName: Diego
-      hairColor: '#000000'
-      skinColor: '#6C2F0A'
-      topColor: '#298123'
-      bottomColor: '#0048A5'
-      shoes: 0
-    scenesPlayed: []
+  detectado: 0
 --- !u!114 &6982815411315896647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79535,21 +79506,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: []
   fileName: 
-  inputData: []
---- !u!114 &6982815411315896651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130866454960105776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7181c8f275b5134090774781bdd12dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: []
-  fileName: Linda_10
   inputData: []
 --- !u!4 &7014572655245578313
 Transform:

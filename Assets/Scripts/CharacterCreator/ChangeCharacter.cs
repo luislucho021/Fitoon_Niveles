@@ -18,13 +18,11 @@ public class ChangeCharacter : MonoBehaviour
     [SerializeField] ObjectItem actualShoes;
     [SerializeField] TextMeshProUGUI nameText;
 
-    SaveData saveData;
 
     private void Awake()
     {
-        //Leer el personaje guardado
-        saveData = GetComponent<SaveData>();
-        saveData.ReadFromJson();
+		//Leer el personaje guardado
+		SaveData.ReadFromJson();
         ReadCharacter();
         
     }
@@ -113,7 +111,7 @@ public class ChangeCharacter : MonoBehaviour
     public void ReadCharacter()
     {
         //Buscar la skin
-        string savedSkin = saveData.player.playerCharacterData.characterName;
+        string savedSkin = SaveData.player.playerCharacterData.characterName;
         if(savedSkin == null)
         {
             actualCharacter = characters[0];
@@ -178,7 +176,7 @@ public class ChangeCharacter : MonoBehaviour
         //Actualizar zapatillas
         GameObject zapatos = GameObject.FindGameObjectWithTag("Shoes");
         SkinnedMeshRenderer renderer = zapatos.GetComponent<SkinnedMeshRenderer>();
-        int i = saveData.player.playerCharacterData.shoes;
+        int i = SaveData.player.playerCharacterData.shoes;
 
       //  Debug.Log($"ANTES: Zapato GO: {zapatos.name}. Mesh rendered: {renderer.sharedMesh}. ActualShoe id: {i}");
 
@@ -200,19 +198,19 @@ public class ChangeCharacter : MonoBehaviour
     void UpdateColors()
     {
         Color color = Color.black; //si falla saldrá negro
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.hairColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.hairColor, out color))
         {
             actualCharacter.hair.color = color;
         }
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.skinColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.skinColor, out color))
         {
             actualCharacter.skin.color = color;
         }
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.bottomColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.bottomColor, out color))
         {
             actualCharacter.bottom.color = color;
         }
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.topColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.topColor, out color))
         {
             actualCharacter.top.color = color;
         }
@@ -228,13 +226,13 @@ public class ChangeCharacter : MonoBehaviour
             }
         }
 
-        saveData.player.playerCharacterData.characterName = actualCharacter.characterName;
-        saveData.player.playerCharacterData.hairColor = ColorToHex(actualCharacter.hair.color);
-        saveData.player.playerCharacterData.skinColor = ColorToHex(actualCharacter.skin.color);
-        saveData.player.playerCharacterData.topColor = ColorToHex(actualCharacter.top.color);
-        saveData.player.playerCharacterData.bottomColor = ColorToHex(actualCharacter.bottom.color);
-        saveData.player.playerCharacterData.shoes = actualShoes.id;
-        saveData.SaveToJson();
+        SaveData.player.playerCharacterData.characterName = actualCharacter.characterName;
+        SaveData.player.playerCharacterData.hairColor = ColorToHex(actualCharacter.hair.color);
+        SaveData.player.playerCharacterData.skinColor = ColorToHex(actualCharacter.skin.color);
+        SaveData.player.playerCharacterData.topColor = ColorToHex(actualCharacter.top.color);
+        SaveData.player.playerCharacterData.bottomColor = ColorToHex(actualCharacter.bottom.color);
+        SaveData.player.playerCharacterData.shoes = actualShoes.id;
+        SaveData.SaveToJson();
         //saveData.ReadFromJson();
         ReadCharacter();
         

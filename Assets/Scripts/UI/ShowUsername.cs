@@ -5,12 +5,10 @@ using TMPro;
 
 public class ShowUsername : MonoBehaviour
 {
-    SaveData save;
     [SerializeField] TextMeshPro userText;
 
     private void Start()
     {
-        save = FindAnyObjectByType<SaveData>();
-        userText.text = save.player.username;
+        userText.text = SaveData.player.username;
     }
 }

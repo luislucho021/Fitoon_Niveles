@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[Obsolete]
 public class PlayerControl : MonoBehaviour
 {
     public CharacterItem playerCharacter;
@@ -27,7 +28,6 @@ public class PlayerControl : MonoBehaviour
     private bool isEffectApplied = false;
     private bool faceDetected = true;
 
-    SaveData saveData;
     [SerializeField] List<CharacterItem> charactersList;
     [SerializeField] List<ObjectItem> shoes;
     CharacterItem actualCharacter;
@@ -53,7 +53,6 @@ public class PlayerControl : MonoBehaviour
     private void Awake()
     {
         rB = GetComponent<Rigidbody>();
-        saveData = FindAnyObjectByType<SaveData>();
         ReadCharacterSaved();
 
         countdownTimer = FindObjectOfType<Countdown>();
@@ -118,11 +117,11 @@ public class PlayerControl : MonoBehaviour
 
     void ReadCharacterSaved()
     {
-        saveData.ReadFromJson();
+		SaveData.ReadFromJson();
 
         actualCharacter = new CharacterItem();
         //Buscar la skin
-        string savedSkin = saveData.player.playerCharacterData.characterName;
+        string savedSkin = SaveData.player.playerCharacterData.characterName;
         if (savedSkin == null)
         {
             Debug.LogError("Error: No hay personaje guardado");
@@ -142,7 +141,7 @@ public class PlayerControl : MonoBehaviour
         //Actualizar zapatillas
         GameObject zapatos = GameObject.FindGameObjectWithTag("Shoes");
         SkinnedMeshRenderer renderer = zapatos.GetComponent<SkinnedMeshRenderer>();
-        int i = saveData.player.playerCharacterData.shoes;
+        int i = SaveData.player.playerCharacterData.shoes;
 
         foreach (ObjectItem shoeItem in shoes)
         {
@@ -158,19 +157,19 @@ public class PlayerControl : MonoBehaviour
     void UpdateColors()
     {
         Color color = Color.black; //si falla saldrá negro
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.hairColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.hairColor, out color))
         {
             actualCharacter.hair.color = color;
         }
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.skinColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.skinColor, out color))
         {
             actualCharacter.skin.color = color;
         }
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.bottomColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.bottomColor, out color))
         {
             actualCharacter.bottom.color = color;
         }
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.topColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.topColor, out color))
         {
             actualCharacter.top.color = color;
         }
@@ -184,7 +183,7 @@ public class PlayerControl : MonoBehaviour
             if (!botSpawner.spawnpointData[i]._isOccupied)
             {
                 //Updates the spawnpoint NetworkList with this spawnpoint as isOccupied and the playerId on it
-                botSpawner.UpdateSpawnpointsList(i, botSpawner.spawnpointData[i]._spPosition, true, saveData.player.username);
+                botSpawner.UpdateSpawnpointsList(i, botSpawner.spawnpointData[i]._spPosition, true, SaveData.player.username);
 
                 transform.position = new Vector3(botSpawner.spawnpointData[i]._spPosition.x, botSpawner.spawnpointData[i]._spPosition.y + 1, botSpawner.spawnpointData[i]._spPosition.z);
                 playerSPIndex = i;

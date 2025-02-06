@@ -18,17 +18,15 @@ public class GameOver : MonoBehaviour
     [SerializeField] int goldMoney, silverMoney, bronzeMoney;
     [SerializeField] TextMeshProUGUI rewardText;
     [SerializeField] TextMeshProUGUI moneyText;
-    SaveData saveData;
     private void Awake()
     {
-        saveData = GetComponent<SaveData>();
     }
     void Start()
     {
-        saveData.ReadFromJson();
+		SaveData.ReadFromJson();
         CalculateReward();
         RaceManager.Instance.Reset();
-        saveData.SaveToJson();
+		SaveData.SaveToJson();
     }
 
     private void CalculateReward()
@@ -37,16 +35,16 @@ public class GameOver : MonoBehaviour
         {
             if (RaceManager.Instance.playerWon)
             {
-                //Primer puesto
-                saveData.player.points += goldPoints;
-                saveData.player.normalCoins += goldMoney;
+				//Primer puesto
+				SaveData.player.points += goldPoints;
+				SaveData.player.normalCoins += goldMoney;
                 rewardText.text = $"#1 position!\nYou won {goldPoints} points!";
                 moneyText.text = $"+{goldMoney}";
             }
             else
             {
-                saveData.player.points += silverPoints;
-                saveData.player.normalCoins += silverMoney;
+				SaveData.player.points += silverPoints;
+				SaveData.player.normalCoins += silverMoney;
                 rewardText.text = $"You won {silverPoints} points!";
                 moneyText.text = $"+{silverMoney}";
             }
@@ -54,14 +52,14 @@ public class GameOver : MonoBehaviour
         }
         else if (RaceManager.Instance.numberOfRace == 2)
         {
-            saveData.player.points += bronzePoints;
-            saveData.player.normalCoins += bronzeMoney;
+			SaveData.player.points += bronzePoints;
+			SaveData.player.normalCoins += bronzeMoney;
             rewardText.text = $"You won {bronzePoints} points!";
             moneyText.text = $"+{bronzeMoney}";
         }
         else if (RaceManager.Instance.numberOfRace == 1)
         {
-            saveData.player.points += loserPoints;
+			SaveData.player.points += loserPoints;
             rewardText.text = $"You won {loserPoints} points!";
             moneyText.text = "+0";
         }

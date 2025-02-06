@@ -8,7 +8,6 @@ using UnityEngine.UI;
 
 public class RandomEscenario : MonoBehaviour
 {
-    SaveData saveData;
     [SerializeField] List<EscenarioItem> escenarios;
     [SerializeField] List<EscenarioItem> escenariosDisponibles;
     [SerializeField] GameObject container;
@@ -25,7 +24,6 @@ public class RandomEscenario : MonoBehaviour
 
     void Start()
     {
-        saveData = FindAnyObjectByType<SaveData>();
         image = container.GetComponentInChildren<Image>();
         text = container.GetComponentInChildren<TextMeshProUGUI>();
         escenariosDisponibles = new List<EscenarioItem>(escenarios);
@@ -49,9 +47,9 @@ public class RandomEscenario : MonoBehaviour
             text.text = escenarioElegido.nombreEscenario;
         }
 
-        //timer = 0;
-        saveData.player.scenesPlayed.Add(escenarioElegido);
-        saveData.SaveToJson();
+		//timer = 0;
+		SaveData.player.scenesPlayed.Add(escenarioElegido);
+		SaveData.SaveToJson();
 
         timerActive = false;
         countdownText.text = countdown.ToString();
@@ -78,8 +76,8 @@ public class RandomEscenario : MonoBehaviour
 
     private void GetAvaliableScenarios()
     {
-        saveData.ReadFromJson();
-        foreach (EscenarioItem item in saveData.player.scenesPlayed)
+		SaveData.ReadFromJson();
+        foreach (EscenarioItem item in SaveData.player.scenesPlayed)
         {
             escenariosDisponibles.Remove(item);
         }

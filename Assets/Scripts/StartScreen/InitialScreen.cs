@@ -5,7 +5,6 @@ using TMPro;
 
 public class InitialScreen : MonoBehaviour
 {
-    SaveData saveData;
     [SerializeField] GameObject characterContainer;
     [SerializeField] List<CharacterItem> characters;
     CharacterItem actualCharacter;
@@ -14,7 +13,6 @@ public class InitialScreen : MonoBehaviour
     [SerializeField] TMP_InputField inputName;
     private void Start()
     {
-        saveData = GetComponent<SaveData>();
         ReadUsername();
         ReadCharacter();
         ResetScenesPlayed();
@@ -23,16 +21,16 @@ public class InitialScreen : MonoBehaviour
 
     void ReadUsername()
     {
-        if (saveData.player.username == "Username") return;
+        if (SaveData.player.username == "Username") return;
         else
         {
-            inputName.text = saveData.player.username;
+            inputName.text = SaveData.player.username;
         }
     }
     void ReadCharacter()
     {
         //Leer la skin
-        string savedSkin = saveData.player.playerCharacterData.characterName;
+        string savedSkin = SaveData.player.playerCharacterData.characterName;
         if (savedSkin == null)
         {
             print("Error: No hay personaje guardado");
@@ -69,7 +67,7 @@ public class InitialScreen : MonoBehaviour
         //Actualizar zapatillas
         GameObject zapatos = GameObject.FindGameObjectWithTag("Shoes");
         SkinnedMeshRenderer renderer = zapatos.GetComponent<SkinnedMeshRenderer>();
-        int i = saveData.player.playerCharacterData.shoes;
+        int i = SaveData.player.playerCharacterData.shoes;
 
         //  Debug.Log($"ANTES: Zapato GO: {zapatos.name}. Mesh rendered: {renderer.sharedMesh}. ActualShoe id: {i}");
 
@@ -89,19 +87,19 @@ public class InitialScreen : MonoBehaviour
     void UpdateColors()
     {
         Color color = Color.black; //si falla saldrá negro
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.hairColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.hairColor, out color))
         {
             actualCharacter.hair.color = color;
         }
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.skinColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.skinColor, out color))
         {
             actualCharacter.skin.color = color;
         }
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.bottomColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.bottomColor, out color))
         {
             actualCharacter.bottom.color = color;
         }
-        if (ColorUtility.TryParseHtmlString(saveData.player.playerCharacterData.topColor, out color))
+        if (ColorUtility.TryParseHtmlString(SaveData.player.playerCharacterData.topColor, out color))
         {
             actualCharacter.top.color = color;
         }
@@ -109,13 +107,13 @@ public class InitialScreen : MonoBehaviour
 
     public void SaveUsername(string value)
     {
-        saveData.player.username = value;
-        saveData.SaveToJson();
+        SaveData.player.username = value;
+        SaveData.SaveToJson();
     }
 
     public void ResetScenesPlayed()
     {
-        saveData.player.scenesPlayed.Clear();
-        saveData.SaveToJson();
+        SaveData.player.scenesPlayed.Clear();
+        SaveData.SaveToJson();
     }
 }

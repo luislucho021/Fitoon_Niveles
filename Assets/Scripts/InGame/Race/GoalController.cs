@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class GoalController : MonoBehaviour
 {
-    SaveData saveData;
     public TextMeshProUGUI currentPositionTextMesh;
 
     [SerializeField] private int finishedPlayers = 0;
@@ -24,7 +23,6 @@ public class GoalController : MonoBehaviour
     public static event OnRaceFinish onRaceFinishEvent;
     private void Awake()
     {
-        saveData = FindAnyObjectByType<SaveData>();
     }
     private void Start()
     {
@@ -70,7 +68,7 @@ public class GoalController : MonoBehaviour
                 infoText.text = "You are in! Waiting for the others...";
 
                 //Añadirlo a una lista en race manager para la siguiente ronda
-                RaceManager.Instance.raceBots.Add(new RaceManager.RaceBotsData(true, saveData.player.username, 0, 0, 0, 0, 0));
+                RaceManager.Instance.raceBots.Add(new RaceManager.RaceBotsData(true, SaveData.player.username, 0, 0, 0, 0, 0));
             }
 
             else

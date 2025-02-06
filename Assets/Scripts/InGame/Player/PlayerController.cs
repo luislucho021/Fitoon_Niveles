@@ -37,12 +37,7 @@ public class PlayerController : BaseRunner
 
 	void LoadCharacterData()
 	{
-		SaveData saveData = FindAnyObjectByType<SaveData>();
-		if (saveData == null ) 
-		{
-			saveData = new SaveData();
-		}
-		saveData.ReadFromJson();
-		character = CharacterLoader.GetCharacter(saveData.player.playerCharacterData);
+		SaveData.ReadFromJson();
+		character = CharacterLoader.GetCharacter(SaveData.player.playerCharacterData);
 	}
 }

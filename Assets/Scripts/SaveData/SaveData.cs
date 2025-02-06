@@ -4,30 +4,18 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.Android;
 
-public class SaveData : MonoBehaviour
+public static class SaveData
 {
-    public PlayerData player;
+    public static PlayerData player;
     
-    private void Awake()
+    public static void SaveToJson()
     {
-        player  = new PlayerData();
-        ReadFromJson();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (player == null)
         {
-            SaveToJson();
-        }
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
+            player = new PlayerData();
             ReadFromJson();
         }
-    }
-    public void SaveToJson()
-    {
+
         string playerData = JsonUtility.ToJson(player);
         string filePath = System.IO.Path.Combine(Application.persistentDataPath,"PlayerData.json");
         System.IO.File.WriteAllText(filePath, playerData);
@@ -51,7 +39,7 @@ public class SaveData : MonoBehaviour
         Debug.Log("[SAVE] Datos guardados en " + filePath);
     }
 
-    public void ReadFromJson()
+    public static void ReadFromJson()
     {
         string filePath = System.IO.Path.Combine(Application.persistentDataPath, "PlayerData.json");
 

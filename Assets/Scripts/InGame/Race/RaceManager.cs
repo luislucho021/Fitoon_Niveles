@@ -24,7 +24,6 @@ public class RaceManager : MonoBehaviour
     }
 
     public static RaceManager Instance;
-    SaveData saveData;
 
     public int numberOfRace = 1;
     public int maxRaces = 3;
@@ -45,7 +44,6 @@ public class RaceManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        saveData = FindAnyObjectByType<SaveData>();
         raceBots = new List<RaceBotsData>();
         playerPerRace = new int[3];
         playerPerRace[0] = 16;
@@ -60,8 +58,8 @@ public class RaceManager : MonoBehaviour
         maxRaces = 3;
         raceBots = new List<RaceBotsData>();
         playerWon = false;
-        saveData.ReadFromJson();
-        saveData.player.scenesPlayed.Clear();
-        saveData.SaveToJson();
+		SaveData.ReadFromJson();
+		SaveData.player.scenesPlayed.Clear();
+		SaveData.SaveToJson();
     }
 }

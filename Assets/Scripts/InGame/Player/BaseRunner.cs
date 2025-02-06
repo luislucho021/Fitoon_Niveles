@@ -5,7 +5,7 @@ using FishNet.Object;
 
 public class BaseRunner : NetworkBehaviour
 {
-    protected CharacterItem character;
+    protected Character character;
 
 
 	[SerializeField] protected float baseSpeed;
@@ -44,14 +44,13 @@ public class BaseRunner : NetworkBehaviour
 	}
 	void UpdateAnimator()
 	{
-		RaycastHit hit;
-		animator.SetBool("isFalling", Physics.Raycast(transform.position, Vector3.down, out hit, runnerHeight * 0.5f + 1f, whatIsGround));
+		animator.SetBool("isFalling", Physics.Raycast(transform.position, Vector3.down, out _, runnerHeight * 0.5f + 1f, whatIsGround));
 		animator.SetBool("isRunning", rigidBody.velocity.magnitude > 0.3f);
 		animator.SetFloat("playerSpeed", 0.3f + new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z).magnitude / 10);
 	}
 	protected void LoadCharacter()
 	{
-		if(character == null)
+		if(character.prefab == null)
 		{
 			Debug.LogError("Character Data is Null");
 			return;

@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
+[Obsolete]
 public class MoveThePlayer : MonoBehaviour
 {
     public bool testing;

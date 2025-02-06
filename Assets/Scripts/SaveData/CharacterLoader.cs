@@ -5,36 +5,50 @@ using UnityEngine;
 public class CharacterLoader : Object
 {
     static CharacterDataList characterDataList;
-    public static CharacterItem GetCharacter(CharacterData data)
+    public static Character GetCharacter(CharacterData data)
     {
-        if(characterDataList == null)
+        Character characterStruct = new Character
+        {
+            prefab = null,
+            name = "Error",
+        };
+		if (characterDataList == null)
         {
             characterDataList = Resources.Load<CharacterDataList>("CharacterDataList");
             if(characterDataList == null ) 
             {
                 Debug.LogError("Character Data List Not Found");
-                return null;
+                return characterStruct;
             }
 		}
-        CharacterItem characterItem = new CharacterItem();
         foreach(CharacterItem character in characterDataList.characters)
         {
             if(character.name == data.characterName )
             {
-                characterItem.prefab = character.prefab;
+                characterStruct.prefab = character.prefab;
             }
             if(character.shoes.id == data.shoes)
             {
-                characterItem.shoes = character.shoes;
+                characterStruct.shoes = character.shoes;
             }
         }
-        characterItem.name = data.characterName;
+        characterStruct.name = data.characterName;
 
-        ColorUtility.TryParseHtmlString(data.hairColor, out characterItem.hairColor);
-        ColorUtility.TryParseHtmlString(data.skinColor, out characterItem.skinColor);
-        ColorUtility.TryParseHtmlString(data.topColor, out characterItem.topColor);
-		ColorUtility.TryParseHtmlString(data.bottomColor, out characterItem.bottomColor);
+        ColorUtility.TryParseHtmlString(data.hairColor, out characterStruct.hairColor);
+        ColorUtility.TryParseHtmlString(data.skinColor, out characterStruct.skinColor);
+        ColorUtility.TryParseHtmlString(data.topColor, out characterStruct.topColor);
+		ColorUtility.TryParseHtmlString(data.bottomColor, out characterStruct.bottomColor);
 
-		return characterItem;
+		return characterStruct;
     }
+}
+public struct Character
+{
+    public GameObject prefab;
+    public string name;
+    public ObjectItem shoes;
+    public Color hairColor;
+    public Color skinColor;
+    public Color topColor;
+    public Color bottomColor;
 }
