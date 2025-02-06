@@ -1326,7 +1326,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2736633445514084289}
   - component: {fileID: 3364656429018490234}
-  - component: {fileID: 3364656429018490229}
   - component: {fileID: 3364656429018490228}
   m_Layer: 3
   m_Name: ChicoGorro
@@ -1385,18 +1384,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3364656429018490229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3364656429018490235}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65db9253f47f89c42a3eddfaea5b95e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3364656429018490228
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,6 +2039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81ce14bbaa2741478195ffd2a46fda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectado: 0
   rotationIntensity: 2
   velocityText: {fileID: 0}
   cadenceText: {fileID: 0}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5897458, g: 0.8574647, b: 0.9798402, a: 1}
+  m_IndirectSpecularColor: {r: 0.5897592, g: 0.8574704, b: 0.9798402, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -542,7 +542,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 446503905}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &19520938
 MeshRenderer:
@@ -2156,7 +2156,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1569114501}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &80696347
 MeshRenderer:
@@ -7171,7 +7171,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1633720758}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &210232077
 MeshRenderer:
@@ -8249,7 +8249,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1573134272}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &239815359
 MeshRenderer:
@@ -20930,6 +20930,8 @@ MonoBehaviour:
   numberOfRace: 1
   maxRaces: 3
   playerWon: 0
+  playerPerRace: 
+  raceBots: []
 --- !u!4 &635491658
 Transform:
   m_ObjectHideFlags: 0
@@ -25267,7 +25269,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1569114501}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &743833429
 MeshRenderer:
@@ -26878,7 +26880,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 720816512}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &793832526
 MeshRenderer:
@@ -30697,7 +30699,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1573134272}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &900773264
 MeshRenderer:
@@ -31537,7 +31539,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 446503905}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &918225851
 MeshRenderer:
@@ -35537,7 +35539,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 720816512}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1042060156
 MeshRenderer:
@@ -36143,7 +36145,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1462902210}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1063227632
 MeshRenderer:
@@ -40722,7 +40724,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.1
-  far clip plane: 200
+  far clip plane: 400
   field of view: 70
   orthographic: 0
   orthographic size: 10
@@ -58131,7 +58133,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1633720758}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1746258447
 MeshRenderer:
@@ -60398,7 +60400,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1329479846}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1816908202
 MeshRenderer:
@@ -64557,7 +64559,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1329479846}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &1980249517
 MeshRenderer:
@@ -66255,7 +66257,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1462902210}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &2036101292
 MeshRenderer:
@@ -71333,6 +71335,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a145c4e83f5e5841bc35c9b46d96826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _componentIndexCache: 255
+  _addedNetworkObject: {fileID: 7968124481607714996}
+  _networkObjectCache: {fileID: 0}
 --- !u!33 &1744368996208864532
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -82200,12 +82205,12 @@ MonoBehaviour:
   speedMultiplier: 1
   speedBoost: 1
   trailBoost: {fileID: 7738159424849470469}
-  autoRun: 0
   charactersList:
   - {fileID: 11400000, guid: 3dee8a9500c042247ab3598f63f10977, type: 2}
   - {fileID: 11400000, guid: 61929e2d12e1855459c6d5085e64d7e6, type: 2}
   - {fileID: 11400000, guid: 6f25130db9a5749408d3dd3f76d34610, type: 2}
   - {fileID: 11400000, guid: 3500b0f443d6c01438652ed81533ba29, type: 2}
+  shoes: []
 --- !u!114 &6982815411315896644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82218,14 +82223,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81ce14bbaa2741478195ffd2a46fda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  detectado: 0
   rotationIntensity: 2
   velocityText: {fileID: 1637405505}
   cadenceText: {fileID: 762463291}
   animCadenceText: {fileID: 623151725}
   sampleRate: 128
   distanciaPaso: 0.67
-  enter_intensity: {fileID: 638236589}
-  debugCube: {fileID: 699073849}
 --- !u!114 &6982815411315896645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82239,15 +82243,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player:
+    username: 
     normalCoins: 0
-    diamondsCoins: 0
-    skinsCompradas: 
+    points: 0
+    purchasedSkins: 
+    purchasedShoes: 
+    purchasedColors: 
     playerCharacterData:
       characterName: Diego
       hairColor: '#000000'
       skinColor: '#6C2F0A'
       topColor: '#298123'
       bottomColor: '#0048A5'
+      shoes: 0
+    scenesPlayed: []
 --- !u!114 &6982815411315896647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83844,6 +83853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 709584978379899421}
+  - component: {fileID: 7968124481607714996}
   m_Layer: 3
   m_Name: PlayerPrefab
   m_TagString: Untagged
@@ -83851,6 +83861,57 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &7968124481607714996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7968124481607714995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26b716c41e9b56b4baafaf13a523ba2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <IsNested>k__BackingField: 0
+  <ComponentIndex>k__BackingField: 0
+  <PredictedSpawn>k__BackingField: {fileID: 0}
+  <PredictedOwner>k__BackingField: {fileID: 0}
+  NetworkBehaviours: []
+  InitializedParentNetworkBehaviour: {fileID: 0}
+  InitializedNestedNetworkObjects: []
+  RuntimeParentNetworkBehaviour: {fileID: 0}
+  RuntimeChildNetworkBehaviours: []
+  _isNetworked: 1
+  _isSpawnable: 1
+  _isGlobal: 0
+  _initializeOrder: 0
+  _preventDespawnOnDisconnect: 0
+  _defaultDespawnType: 0
+  _initializedValusSet: 0
+  NetworkObserver: {fileID: 0}
+  _enablePrediction: 0
+  _predictionType: 0
+  _graphicalObject: {fileID: 0}
+  _detachGraphicalObject: 0
+  _enableStateForwarding: 1
+  _networkTransform: {fileID: 0}
+  _ownerInterpolation: 1
+  _ownerSmoothedProperties: 255
+  _adaptiveInterpolation: 3
+  _spectatorSmoothedProperties: 255
+  _spectatorInterpolation: 2
+  _enableTeleport: 0
+  _teleportThreshold: 1
+  <PrefabId>k__BackingField: 65535
+  <SpawnableCollectionId>k__BackingField: 0
+  <AssetPathHash>k__BackingField: 0
+  <SceneId>k__BackingField: 0
+  SerializedTransformProperties:
+    Position: {x: 0, y: 0, z: 0}
+    Rotation: {x: 0, y: 0, z: 0, w: 0}
+    Scale: {x: 0, y: 0, z: 0}
+    IsValid: 0
 --- !u!1 &7996756136843776982
 GameObject:
   m_ObjectHideFlags: 0
@@ -83861,7 +83922,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7327919521695517036}
   - component: {fileID: 7996756136843776983}
-  - component: {fileID: 7996756136843776984}
   - component: {fileID: 7996756136843776985}
   m_Layer: 3
   m_Name: ChicoGorro
@@ -83891,18 +83951,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7996756136843776984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7996756136843776982}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65db9253f47f89c42a3eddfaea5b95e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7996756136843776985
 MonoBehaviour:
   m_ObjectHideFlags: 0

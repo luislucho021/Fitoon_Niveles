@@ -12,41 +12,37 @@ public class FaceTrackingToMovement : MonoBehaviour
     ARFaceManager faceManager;
     ARFace face;
 
-    public float faceAngle
+    public Quaternion faceRotation
     {
         get
         {
-            return face != null ? face.transform.eulerAngles.y : 0;
-        }
+            if (face == null)
+                return Quaternion.identity;
+
+            float angle = face.transform.eulerAngles.y > 180 ? face.transform.eulerAngles.y - 360 : face.transform.eulerAngles.y;
+            angle *= rotationIntensity;
+            angle = Mathf.Clamp(angle, -90f, 90f);
+            return Quaternion.Euler(0, angle, 0);
+		}
     }
     public float speed { get; private set; }
-
-
-
-
-
-
-    private GoalController goal;
-    private bool detectado = false;
-    private FadeCamera fadeCamera;
-
+	
     [Header("Rotation")]
-    private Rigidbody rb;
-    [SerializeField] int rotationIntensity = 2;
+	[SerializeField] int rotationIntensity = 2;
+	[Header("Velocity")]
+	[SerializeField] TextMeshProUGUI velocityText;
+	[SerializeField] TextMeshProUGUI cadenceText;
+	[SerializeField] TextMeshProUGUI animCadenceText;
+	[SerializeField] float sampleRate = 128; //frames para calcular la velocidad
+    [SerializeField] float distanciaPaso = 0.67f;
 
-    [Header("Velocity")]
-    [SerializeField] TextMeshProUGUI velocityText;
-    [SerializeField] TextMeshProUGUI cadenceText;
-    [SerializeField] TextMeshProUGUI animCadenceText;
-    List<float> data;
-    public float sampleRate; //frames para calcular la velocidad
-    public float distanciaPaso;
-    DominantFrequencyCounter frequencyCounter;
-    MoveThePlayer playerMov;
 
-    int pasosAnimacion;
-    float timer;
-    bool activarTimer = false;
+	public bool detectado = false;
+	private FadeCamera fadeCamera;
+
+	List<float> data;
+
+	DominantFrequencyCounter frequencyCounter;
     
 
     //EVENTOS (Para el movimiento del personaje)
@@ -59,44 +55,30 @@ public class FaceTrackingToMovement : MonoBehaviour
 
     private void OnEnable()
     {
-        pasosAnimacion = 0;
         faceManager = FindFirstObjectByType<ARFaceManager>();
         fadeCamera = FindFirstObjectByType<FadeCamera>();
-        rb = GetComponent<Rigidbody>();
         frequencyCounter = FindFirstObjectByType<DominantFrequencyCounter>();
-        playerMov = GetComponent<MoveThePlayer>();
 
         faceManager.facesChanged += CaraDetectada;
         if(fadeCamera != null) fadeCamera.StartFade(true);
 
-        goal = FindObjectOfType<GoalController>();
-        goal.AddPlayerToList(transform);
-
         data = new List<float>();
-
-        CuentaPasos.onPasoEvent += ContarPaso;
 
     }
 
     private void OnDisable()
     {
         faceManager.facesChanged -= CaraDetectada;
-        CuentaPasos.onPasoEvent -= ContarPaso;
     }
 
-
-    //----------AR ROTATION--------------------
     void Update()
     {
-        if (detectado)
+        if (!detectado)
         {
-            RotateCharacter(face.transform);
-            CalculateVelocity(face.transform);
+            return;
         }
-
-        if(!playerMov.testing) velocityText.text = $"Velocity: {Math.Round(speed, 2, MidpointRounding.AwayFromZero)} ({Math.Round(speed * 3.6, 2, MidpointRounding.AwayFromZero)} km/h)";
-        
-        if (activarTimer) timer += Time.deltaTime;
+		CalculateVelocity(face.transform);
+		velocityText.text = $"Velocity: {Math.Round(speed, 2, MidpointRounding.AwayFromZero)} ({Math.Round(speed * 3.6, 2, MidpointRounding.AwayFromZero)} km/h)";
     }
 
     private void CalculateVelocity(Transform faceData)
@@ -104,20 +86,14 @@ public class FaceTrackingToMovement : MonoBehaviour
         //Cuando pasen X frames, mandar esa lista a la FFT y sacar la frecuencia
         if (data.Count == sampleRate)
         {
-
             float frecuencia = frequencyCounter.DoFFT(data.ToArray());
             //Calcular la velocidad. Pasos/segundo -> Metros/segundo
             speed = distanciaPaso * frecuencia;
             Debug.Log($"Velocidad media: {speed} m/s.");
 
             float cadencia = frecuencia * 60f;
-            //La animacion base a velocidad 1 tiene una cadencia de aprox 136.
-            float animationSpeed = cadencia / 136;
-
 
             cadenceText.text = $"Cadence: {cadencia}";
-
-            playerMov.moveSpeed = speed * 3f;
 
             //Reiniciar lista
             data.Clear();
@@ -128,76 +104,6 @@ public class FaceTrackingToMovement : MonoBehaviour
             data.Add(faceData.position.y);
         }
 
-    }
-
-    // Calcular el rango entre el valor mínimo y máximo de una lista
-    float CalculateRange(List<float> positions)
-    {
-        if (positions.Count == 0)
-        {
-            return 0;
-        }
-
-        float min = float.MaxValue;
-        float max = float.MinValue;
-
-        foreach (float pos in positions)
-        {
-            if (pos < min)
-            {
-                min = pos;
-            }
-
-            if (pos > max)
-            {
-                max = pos;
-            }
-        }
-
-        float range = max - min;
-        return range;
-    }
-
-    private void RotateCharacter(Transform otherObject)
-    {
-        // Face forward rotation
-        float angle = GetObjectRotation(otherObject);
-
-        // Rotation with intensity multiplier
-        float rotationWithMult = angle * rotationIntensity;
-
-        // Clamp bewteen -90 and 90
-        float clampedRotation = Mathf.Clamp(rotationWithMult, -90f, 90f);
-
-        // Rotate the character
-        Quaternion desiredRotation = Quaternion.Euler(0f, clampedRotation, 0f);
-        transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, 1f);
-    }
-
-    private float GetObjectRotation(Transform obj)
-    {
-        if (obj.transform.eulerAngles.y > 180)
-        {
-            return obj.transform.eulerAngles.y - 360;
-        }
-        else
-        {
-            return obj.transform.eulerAngles.y;
-        }
-    }
-    
-
-    void ContarPaso()
-    {       
-        activarTimer = true;
-        pasosAnimacion++;
-        if(timer >= 15)
-        {
-            Debug.Log($"Cadencia personaje: {pasosAnimacion*4}");
-            timer = 0;
-            pasosAnimacion = 0;
-        }
-        
     }
 
     //-----------EVENTS---------
