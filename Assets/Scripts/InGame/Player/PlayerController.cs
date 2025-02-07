@@ -1,21 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FishNet.Object;
 
 public class PlayerController : BaseRunner
 {
-	[SerializeField] float rotationSpeed = .5f;
     FaceTrackingToMovement faceTracking;
 
 	void Awake()
     {
         BaseAwake();
-		LoadCharacterData();
-		LoadCharacter();
+		LoadCharacter(LoadCharacterData());
     }
 
 	private void Start()
 	{
+		GameManager.AddPlayer(this);
 		faceTracking = GetComponent<FaceTrackingToMovement>();
 	}
 
@@ -35,9 +35,13 @@ public class PlayerController : BaseRunner
 		BaseUpdate();
 	}
 
-	void LoadCharacterData()
+	public override void OnStopClient()
+	{
+		GameManager.RemoveRunner(this);
+	}
+	Character LoadCharacterData()
 	{
 		SaveData.ReadFromJson();
-		character = CharacterLoader.GetCharacter(SaveData.player.playerCharacterData);
+		return CharacterLoader.GetCharacter(SaveData.player.playerCharacterData);
 	}
 }

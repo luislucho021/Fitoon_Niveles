@@ -301,7 +301,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -41.289978, y: 24.78003}
+  m_AnchoredPosition: {x: -41.29004, y: 24.78003}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &10091195
@@ -70681,7 +70681,6 @@ GameObject:
   - component: {fileID: 1130866454960105791}
   - component: {fileID: 6683078783192964587}
   - component: {fileID: 6982815411315896642}
-  - component: {fileID: 6982815411315896651}
   - component: {fileID: 6982815411315896650}
   - component: {fileID: 6982815411315896644}
   - component: {fileID: 6982815411315896648}
@@ -82278,21 +82277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: []
   fileName: 
-  inputData: []
---- !u!114 &6982815411315896651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1130866454960105776}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7181c8f275b5134090774781bdd12dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: []
-  fileName: Linda_10
   inputData: []
 --- !u!4 &7014572655245578313
 Transform:

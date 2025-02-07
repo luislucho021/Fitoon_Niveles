@@ -41,6 +41,18 @@ public class CharacterLoader : Object
 
 		return characterStruct;
     }
+    public static Character CreateRandomCharacter()
+    {
+        Character character = new Character();
+        character.prefab = characterDataList.characters[Random.Range(0, characterDataList.characters.Length)].prefab;
+        character.name = "";
+        character.skinColor = Random.ColorHSV(0.08f, 0.1f, 0.25f, 0.5f, 0.4f, 1f);
+        character.hairColor = Random.ColorHSV(0, 1, 0.25f, 0.75f, 0f, 1f);
+        character.topColor = Random.ColorHSV();
+        character.bottomColor = Random.ColorHSV();
+        character.shoes = characterDataList.characters[Random.Range(0, characterDataList.characters.Length)].shoes;
+        return character;
+	}
 }
 public struct Character
 {

@@ -5,13 +5,13 @@ using FishNet.Object;
 
 public class BaseRunner : NetworkBehaviour
 {
-    protected Character character;
-
-
 	[SerializeField] protected float baseSpeed;
+	[SerializeField] protected float rotationSpeed = .5f;
 	[SerializeField] protected GameObject trailBoost;
 	[SerializeField] protected LayerMask whatIsGround = LayerMask.NameToLayer("Game");
 	[SerializeField] protected float runnerHeight = 2;
+
+	int id;
 
 	Animator animator;
 	protected Rigidbody rigidBody;
@@ -22,6 +22,7 @@ public class BaseRunner : NetworkBehaviour
 	{
 		animator = GetComponent<Animator>();
 		rigidBody = GetComponent<Rigidbody>();
+		rigidBody.detectCollisions = true;
 		Freeze();
 	}
 	protected void BaseUpdate()
@@ -48,7 +49,7 @@ public class BaseRunner : NetworkBehaviour
 		animator.SetBool("isRunning", rigidBody.velocity.magnitude > 0.3f);
 		animator.SetFloat("playerSpeed", 0.3f + new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z).magnitude / 10);
 	}
-	protected void LoadCharacter()
+	public void LoadCharacter(Character character)
 	{
 		if(character.prefab == null)
 		{
@@ -96,6 +97,22 @@ public class BaseRunner : NetworkBehaviour
 			shoes.GetComponent<SkinnedMeshRenderer>().sharedMesh = character.shoes.mesh;
 		}
 	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.tag is "Goal")
+		{
+			GoalReached();
+		}
+	}
+
+	void GoalReached()
+	{
+		Freeze();
+		rigidBody.detectCollisions = false;
+		GameManager.GoalReached(this);
+	}
+
 	public void Boost(float amount, float duration)
 	{
 		StartCoroutine(BoostCoroutine(amount, duration));
@@ -110,6 +127,17 @@ public class BaseRunner : NetworkBehaviour
 		rigidBody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
 		canMove = true;
 	}
+
+	public void SetId(int i)
+	{
+		id = i;
+	}
+
+	public int GetId()
+	{
+		return id;
+	}
+
 	IEnumerator BoostCoroutine(float amount, float duration)
 	{
 		speedMultiplier += amount;

@@ -1956,7 +1956,6 @@ GameObject:
   - component: {fileID: 2354388624231188457}
   - component: {fileID: 2354388624231188453}
   - component: {fileID: 2354388624231188462}
-  - component: {fileID: 2354388624231188458}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -2039,13 +2038,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e81ce14bbaa2741478195ffd2a46fda4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectado: 0
   rotationIntensity: 2
   velocityText: {fileID: 0}
   cadenceText: {fileID: 0}
   animCadenceText: {fileID: 0}
   sampleRate: 128
   distanciaPaso: 0.67
+  detectado: 0
 --- !u!114 &2354388624231188453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,20 +2094,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e4dcd7d6421e2b4d96e21aab24c80b1, type: 2}
   - {fileID: 11400000, guid: 31139ce02ebf2dd4fac1bc77f8e4d3b2, type: 2}
   - {fileID: 11400000, guid: 45e162a67199dbd46b847c1d9c3ddbe9, type: 2}
---- !u!114 &2354388624231188458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5762957606672097181}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 075750eed9372124d8de750047a4cc79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  betaText: {fileID: 0}
-  cutoffText: {fileID: 0}
 --- !u!1 &5816752822335608018
 GameObject:
   m_ObjectHideFlags: 0
