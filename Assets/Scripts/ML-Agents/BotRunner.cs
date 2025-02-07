@@ -7,11 +7,6 @@ public class BotRunner : BaseRunner
     float moveV;
     float moveH;
 
-    void Start()
-    {
-        
-    }
-
     void FixedUpdate()
     {
 		if (!canMove)
