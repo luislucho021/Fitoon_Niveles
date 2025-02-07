@@ -8,26 +8,28 @@ public class BaseRunner : NetworkBehaviour
 	[SerializeField] protected float baseSpeed;
 	[SerializeField] protected float rotationSpeed = .5f;
 	[SerializeField] protected GameObject trailBoost;
-	[SerializeField] protected LayerMask whatIsGround = LayerMask.NameToLayer("Game");
+	[SerializeField] protected LayerMask whatIsGround;
 	[SerializeField] protected float runnerHeight = 2;
 
 	int id;
 
-	Animator animator;
 	protected Rigidbody rigidBody;
+	Animator animator;
 
 	protected float speedMultiplier = 1;
 	protected bool canMove = true;
 	protected void BaseAwake()
 	{
-		animator = GetComponent<Animator>();
 		rigidBody = GetComponent<Rigidbody>();
 		rigidBody.detectCollisions = true;
 		Freeze();
 	}
 	protected void BaseUpdate()
 	{
-		UpdateAnimator();
+		if(animator != null) 
+		{
+			UpdateAnimator();
+		}
 		UpdateBoostTrail();
 	}
 	void UpdateBoostTrail()
@@ -96,6 +98,7 @@ public class BaseRunner : NetworkBehaviour
 		{
 			shoes.GetComponent<SkinnedMeshRenderer>().sharedMesh = character.shoes.mesh;
 		}
+		animator = GetComponentInChildren<Animator>();
 	}
 
 	private void OnTriggerEnter(Collider other)
