@@ -192,6 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5088448132940981980}
   - component: {fileID: 8865955236192093600}
+  - component: {fileID: 6690346434393305733}
   m_Layer: 6
   m_Name: Cannon
   m_TagString: Untagged
@@ -238,6 +239,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6690346434393305733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608701384447900774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41ce22f484160a4408f71c3540b96b5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 6252772940871634296, guid: 4db59d33d51078447a71b75c7b9722bc, type: 3}
+  projectileSpeed: 10
+  shootDirection: {x: 0, y: 0, z: -1}
 --- !u!1 &7943324141433623539
 GameObject:
   m_ObjectHideFlags: 0
