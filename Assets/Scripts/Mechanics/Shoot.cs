@@ -20,5 +20,4 @@ public class Shoot : MonoBehaviour
             animator.SetTrigger("Shoot");
         }
     }
-
 }

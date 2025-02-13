@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 541821161235112696}
   - component: {fileID: 7133882429945962552}
   - component: {fileID: 4046138246343415955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder.001
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1746146394524547449}
   - component: {fileID: 555510370654057154}
   - component: {fileID: -2023083833976796556}
+  - component: {fileID: -1160552200823197506}
   m_Layer: 6
   m_Name: BarrelRoll
   m_TagString: Obstacle
@@ -212,7 +213,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c189d32735f2824e90aa905b64fae5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explodeOnLayers:
+  explodeOnTags:
+  - Obstacle
   - EffectArea
   - Player
-  - Obstacle
+  explosionPrefab: {fileID: 397854883049178807, guid: e21bfeb43bf6e804ea9ddd1bf55911c1, type: 3}
+--- !u!114 &-1160552200823197506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252772940871634296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f44df1f1dd37e54a847cc2a082867ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRepel: 1
+  jumpForce: 10
+  forwardForce: 5

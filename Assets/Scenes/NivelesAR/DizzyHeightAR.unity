@@ -3671,6 +3671,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 368567804}
     m_Modifications:
+    - target: {fileID: 550796178855753594, guid: 1a80b0743586fdd4888d919ce23dea4c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3063855660757889807, guid: 1a80b0743586fdd4888d919ce23dea4c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -57097,6 +57101,10 @@ PrefabInstance:
       propertyPath: userText
       value: 
       objectReference: {fileID: 7943171615166417516}
+    - target: {fileID: 2354388624231188453, guid: 8bcc3f5a774464a4b806078d17fd8680, type: 3}
+      propertyPath: testing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2354388624231188453, guid: 8bcc3f5a774464a4b806078d17fd8680, type: 3}
       propertyPath: velocityText
       value: 
