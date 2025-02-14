@@ -95,6 +95,8 @@ GameObject:
   - component: {fileID: 7647750870476216423}
   - component: {fileID: 5604364338824195245}
   - component: {fileID: 1746146394524547449}
+  - component: {fileID: 1567538684068795585}
+  - component: {fileID: -623755932393091320}
   m_Layer: 6
   m_Name: Barrel
   m_TagString: Obstacle
@@ -182,3 +184,35 @@ CapsuleCollider:
   m_Height: 6.81
   m_Direction: 0
   m_Center: {x: 0.00000023841864, y: 0.00000059604656, z: -0.00000035762784}
+--- !u!114 &1567538684068795585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252772940871634296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c189d32735f2824e90aa905b64fae5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explodeOnTags:
+  - Obstacle
+  - EffectArea
+  - Player
+  explosionPrefab: {fileID: 397854883049178807, guid: e21bfeb43bf6e804ea9ddd1bf55911c1, type: 3}
+--- !u!114 &-623755932393091320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252772940871634296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f44df1f1dd37e54a847cc2a082867ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRepel: 1
+  jumpForce: 10
+  forwardForce: 5
