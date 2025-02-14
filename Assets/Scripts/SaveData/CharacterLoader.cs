@@ -23,7 +23,7 @@ public class CharacterLoader : Object
 		}
         foreach(CharacterItem character in characterDataList.characters)
         {
-            if(character.name == data.characterName )
+            if(character.prefabId == data.prefabId)
             {
                 characterStruct.prefab = character.prefab;
             }
@@ -57,6 +57,7 @@ public class CharacterLoader : Object
 public struct Character
 {
     public GameObject prefab;
+    public int prefabId;
     public string name;
     public ObjectItem shoes;
     public Color hairColor;

@@ -41,8 +41,8 @@ public class RandomEscenario : MonoBehaviour
         while (timer < totalSeconds) 
         {
             yield return new WaitForSeconds(secondsToChange);
-
-            escenarioElegido = escenariosDisponibles[Random.Range(0, escenariosDisponibles.Count)];
+            int index = Random.Range(0, escenariosDisponibles.Count);
+			escenarioElegido = escenariosDisponibles[index];
             image.sprite = escenarioElegido.imagenEscenario;
             text.text = escenarioElegido.nombreEscenario;
         }
@@ -66,6 +66,7 @@ public class RandomEscenario : MonoBehaviour
             {
                 SceneLoadData sceneData = new SceneLoadData(escenarioElegido.nombreEscenario);
                 InstanceFinder.SceneManager.LoadGlobalScenes(sceneData);
+                UnityEngine.SceneManagement.SceneManager.UnloadSceneAsync("FindingScenario");
 			}
             else
             {

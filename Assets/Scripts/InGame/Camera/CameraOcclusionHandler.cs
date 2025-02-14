@@ -21,7 +21,7 @@ public class CameraOcclusionHandler : MonoBehaviour
     void Start()
     {
         // Find the player object by name and get its transform
-        playerObject = GameObject.Find(playerName);
+        playerObject = transform.parent.gameObject;
         if (playerObject != null)
         {
             player = playerObject.transform;

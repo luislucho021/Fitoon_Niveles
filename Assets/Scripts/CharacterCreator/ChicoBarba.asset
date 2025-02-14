@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Alberto
   prefab: {fileID: 9127915758140191372, guid: 3162a72e08e324349841458a145efcba, type: 3}
+  prefabId: 2
   hair: {fileID: 2100000, guid: 0cf5af9238bfa104aba0cce1a5196b0b, type: 2}
   skin: {fileID: 2100000, guid: 80deed9702f0b0e4fb320ec14b19e7e5, type: 2}
   top: {fileID: 2100000, guid: 04e9773d702c5b044bbf0d76e74f5ed6, type: 2}

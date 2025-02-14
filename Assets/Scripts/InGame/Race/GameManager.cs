@@ -1,53 +1,62 @@
+using FishNet;
+using FishNet.Component.Spawning;
+using FishNet.Managing;
+using FishNet.Managing.Scened;
+using FishNet.Object;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
-    private struct Runner
-    {
-        public int id;
-        public Character character;
-        public bool isPlayer;
-    }
 	[SerializeField] Transform[] spawnPoints;
+    [SerializeField] PlayerController playerPrefab;
     [SerializeField] BotRunner botPrefab;
-    [SerializeField] int[] numberOfWinners;
     [SerializeField] Countdown countdown;
+    [SerializeField] int m_numberOfRunners;
 
-    static List<Runner> runnerData;
+    public static List<Runner> runnerData;
     static List<Runner> winners;
     static List<BaseRunner> runners;
 	public static int numberOfRunners;
-	public static int numberOfPlayers;
+	public static int numberOfPlayers = 0;
     static int currentRace = 0;
-    static int[] s_numberOfWinners;
+    static int[] s_numberOfWinners = { 16, 8, 1 };
 
     static bool classified = false;
 
     static int playerIndex = 0;
 
-    void Awake()
+    public override void OnStartServer()
     {
-        if(currentRace != 0)
+        if(IsServerInitialized)
         {
-            playerIndex = 0;
-            SpawnBots();
-            return;
-        }
+			InstanceFinder.NetworkManager.gameObject.GetComponent<PlayerSpawner>().Spawns = spawnPoints;
+			Debug.Log(InstanceFinder.NetworkManager.gameObject.GetComponent<PlayerSpawner>().Spawns);
 
-        ResetStaticValues();
-		s_numberOfWinners = numberOfWinners;
-		InitializeBots();
-        SpawnBots();
-    }
+			if (currentRace != 0)
+			{
+				playerIndex = 0;
+				SpawnBots();
+				return;
+			}
 
-	void Start()
-	{
-        countdown.StartCountdown();
-        StartCoroutine(WaitForCountdown());
+			if (runners == null)
+			{
+				ResetStaticValues();
+				Debug.Log("Reset Static values");
+			}
+
+			Debug.Log("Current race != 0");
+			InitializeBots();
+            Debug.Log("Initialized bots");
+			SpawnBots();
+		}
+		
+		countdown.StartCountdown();
+		StartCoroutine(WaitForCountdown());
 	}
 
     void UnfreezeAllRunners()
@@ -71,6 +80,7 @@ public class GameManager : MonoBehaviour
             runner.SetId(runnerData[i].id);
             runner.LoadCharacter(runnerData[i].character);
             runners.Add(runner);
+            Spawn(runner.gameObject);
 		}
 	}
 
@@ -82,6 +92,7 @@ public class GameManager : MonoBehaviour
 		currentRace = 0;
 		classified = false;
         playerIndex = 0;
+        numberOfRunners = s_numberOfWinners[0] * 2;
 	}
 
     void InitializeBots()
@@ -140,7 +151,8 @@ public class GameManager : MonoBehaviour
 
             if (currentRace < s_numberOfWinners.Length)
             {
-                SceneManager.LoadScene("Classified");//Esto habrá que cambiarlo para networking
+                SceneLoadData sld = new SceneLoadData("Classified");
+                InstanceFinder.SceneManager.LoadGlobalScenes(sld);
             }
             else
             {
@@ -161,16 +173,29 @@ public class GameManager : MonoBehaviour
             if (classified)
             {
                 currentRace = 0;
-                SceneManager.LoadScene("YouWin");
+                SceneLoadData sldw = new SceneLoadData("YouWin");
+                InstanceFinder.SceneManager.LoadGlobalScenes(sldw);
                 return;
             }
         }
         currentRace = 0;
-        SceneManager.LoadScene("YouLose");
+		SceneLoadData sld = new SceneLoadData("YouLose");
+		InstanceFinder.SceneManager.LoadGlobalScenes(sld);
+	}
+
+    public static void AddPlayer()
+    {
+        numberOfPlayers++;
     }
 
-    public static void AddPlayer(PlayerController player)//Probablemente habrá que cambiarlo para networking
+    public static void AddPlayerToRace(PlayerController player)//Probablemente habrá que cambiarlo para networking
     {
+        if(runners == null)
+        {
+			ResetStaticValues();
+			Debug.Log("Reset Static values");
+		}
+        Debug.Log("PlayerAdded");
         runners.Add(player);
 		if (runnerData.Count == 0)
 		{
@@ -202,4 +227,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitUntil(() => countdown.HasFinished());
         UnfreezeAllRunners();
     }
+}
+public struct Runner
+{
+	public int id;
+	public Character character;
+	public bool isPlayer;
 }

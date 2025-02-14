@@ -47,8 +47,8 @@ public class BaseRunner : NetworkBehaviour
 	}
 	void UpdateAnimator()
 	{
-		animator.SetBool("isFalling", Physics.Raycast(transform.position, Vector3.down, out _, runnerHeight * 0.5f + 1f, whatIsGround));
 		animator.SetBool("isRunning", rigidBody.velocity.magnitude > 0.3f);
+		animator.SetBool("isFalling", Physics.Raycast(transform.position, Vector3.down, out _, runnerHeight * 0.5f + 1f, whatIsGround));
 		animator.SetFloat("playerSpeed", 0.3f + new Vector3(rigidBody.velocity.x, 0, rigidBody.velocity.z).magnitude / 10);
 	}
 	public void LoadCharacter(Character character)
@@ -58,25 +58,27 @@ public class BaseRunner : NetworkBehaviour
 			Debug.LogError("Character Data is Null");
 			return;
 		}
-		GameObject body = Instantiate(character.prefab, transform);
-		GameObject[] gameObjects = body.GetComponentsInChildren<GameObject>();
+		
+		Instantiate(character.prefab, transform);
+
 		List<GameObject> hair = new List<GameObject>();
 		List<GameObject> skin = new List<GameObject>();
 		List<GameObject> top = new List<GameObject>();
 		List<GameObject> bottom = new List<GameObject>();
 		GameObject shoes = null;
-		for(int i = 0; i < gameObjects.Length; i++)
+
+		for (int i = 0; i < transform.childCount; i++)
 		{
-			if (gameObjects[i].tag is "Hair")
-				hair.Add(gameObjects[i]);
-			else if (gameObjects[i].tag is "Skin")
-				skin.Add(gameObjects[i]);
-			else if (gameObjects[i].tag is "Top")
-				top.Add(gameObjects[i]);
-			else if (gameObjects[i].tag is "Bottom")
-				bottom.Add(gameObjects[i]);
-			else if (gameObjects[i].tag is "Shoes")
-				shoes = gameObjects[i];
+			if (transform.GetChild(i).tag is "Hair")
+				hair.Add(transform.GetChild(i).gameObject);
+			else if (transform.GetChild(i).tag is "Skin")
+				skin.Add(transform.GetChild(i).gameObject);
+			else if (transform.GetChild(i).tag is "Top")
+				top.Add(transform.GetChild(i).gameObject);
+			else if (transform.GetChild(i).tag is "Bottom")
+				bottom.Add(transform.GetChild(i).gameObject);
+			else if (transform.GetChild(i).tag is "Shoes")
+				shoes = transform.GetChild(i).gameObject;
 		}
 		foreach (GameObject gameObject in hair)
 		{

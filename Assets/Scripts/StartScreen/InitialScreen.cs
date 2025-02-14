@@ -13,7 +13,8 @@ public class InitialScreen : MonoBehaviour
     [SerializeField] TMP_InputField inputName;
     private void Start()
     {
-        ReadUsername();
+		SaveData.ReadFromJson();
+		ReadUsername();
         ReadCharacter();
         ResetScenesPlayed();
         if (RaceManager.Instance != null) RaceManager.Instance.Reset();

@@ -7,7 +7,11 @@ public class BotRunner : BaseRunner
     float moveV;
     float moveH;
 
-    void FixedUpdate()
+	private void Awake()
+	{
+		BaseAwake();
+	}
+	void FixedUpdate()
     {
 		if (!canMove)
 		{

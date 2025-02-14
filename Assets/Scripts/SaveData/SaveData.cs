@@ -29,6 +29,7 @@ public static class SaveData
             player.playerCharacterData.topColor = "#B46600";
             player.playerCharacterData.bottomColor = "#4F2F12";
             player.playerCharacterData.shoes = 0;
+            player.playerCharacterData.prefabId = 0;
             playerData = JsonUtility.ToJson(player);
             Debug.Log("No había datos. Creando personaje por defecto.");
         }

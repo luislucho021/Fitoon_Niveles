@@ -7,16 +7,19 @@ public class PlayerController : BaseRunner
 {
     FaceTrackingToMovement faceTracking;
 
-	void Awake()
+	public override void OnStartClient()
     {
+		Debug.Log("Player Started");
         BaseAwake();
 		LoadCharacter(LoadCharacterData());
-    }
-
-	private void Start()
-	{
-		GameManager.AddPlayer(this);
+		AddPlayerRpc();
 		faceTracking = GetComponent<FaceTrackingToMovement>();
+	}
+
+	[ServerRpc]
+	void AddPlayerRpc()
+	{
+		GameManager.AddPlayerToRace(this);
 	}
 
 	private void FixedUpdate()

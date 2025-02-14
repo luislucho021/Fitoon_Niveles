@@ -104,7 +104,7 @@ MonoBehaviour:
   _teleportThreshold: 1
   <PrefabId>k__BackingField: 65535
   <SpawnableCollectionId>k__BackingField: 0
-  <AssetPathHash>k__BackingField: 7391093666969488136
+  <AssetPathHash>k__BackingField: 11990709978968732990
   <SceneId>k__BackingField: 0
   SerializedTransformProperties:
     Position: {x: 0, y: 0, z: 0}
@@ -118,7 +118,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402039691163918091}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 9b992dc3fb75ba745995377ce4514b1d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5

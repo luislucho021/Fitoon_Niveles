@@ -27,13 +27,13 @@ public class Ranking : MonoBehaviour
     }
     void UpdateRanking()
     {
-        for (int i = 0; i < RaceManager.Instance.raceBots.Count; i++)
+        for (int i = 0; i < GameManager.runnerData.Count; i++)
         {
             GameObject rankingEntry = Instantiate(rankingPosPrefab, content.transform);
             //posicion
             rankingEntry.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"#{i+1}";
             //nombre
-            rankingEntry.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = RaceManager.Instance.raceBots[i].botID;
+            rankingEntry.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = GameManager.runnerData[i].character.name;
 
             if (RaceManager.Instance.raceBots[i].isPlayer)
             {

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -169,8 +169,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escenarios:
   - {fileID: 11400000, guid: f233fc6485c72e948911f4e60813b190, type: 2}
-  - {fileID: 11400000, guid: 8369127b0f33c8c4e8d4ac09608c84eb, type: 2}
-  - {fileID: 11400000, guid: fb6d688a0d8459444a6ae02d7fdbf47f, type: 2}
   escenariosDisponibles: []
   container: {fileID: 638254325}
   countdownText: {fileID: 747954307}

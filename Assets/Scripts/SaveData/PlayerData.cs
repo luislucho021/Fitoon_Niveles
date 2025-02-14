@@ -18,6 +18,7 @@ public class PlayerData
 public class CharacterData
 {
     public string characterName;
+    public int prefabId;
     public string hairColor, skinColor, topColor, bottomColor; //hex color
     public int shoes;
 }
