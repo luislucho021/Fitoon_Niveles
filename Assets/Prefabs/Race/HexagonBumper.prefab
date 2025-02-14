@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 122924930446906575}
   - component: {fileID: 3898828683688598378}
   - component: {fileID: 1296925977037516704}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HexagonBumper
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

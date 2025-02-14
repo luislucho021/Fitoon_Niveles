@@ -9,38 +9,39 @@ public class Jumpad : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            Rigidbody playerRigidbody = other.GetComponent<Rigidbody>();
-            if (playerRigidbody != null)
-            {
+        if (other.CompareTag("Player")) {
+            Bounce(other.gameObject);
+        }
+    }
 
-                Vector3 playerPosition = other.transform.position;
-                Vector3 directionToPlayer = new Vector3(playerPosition.x - transform.position.x,0, playerPosition.z - transform.position.z);
-                //directionToPlayer.Normalize();
+    public void Bounce(GameObject other)
+    {
+        Rigidbody playerRigidbody = other.GetComponent<Rigidbody>();
+        if (playerRigidbody != null) {
 
-                if (other.GetComponent<PlayerControl>() != null) other.GetComponent<PlayerControl>().LockMovement(true);
-                if (other.GetComponent<BotNoNetwork>() != null) other.GetComponent<BotNoNetwork>().LockMovement(true);
-                if (other.GetComponent<NPCController>() != null) other.GetComponent<NPCController>().LockMovement(true);
+            Vector3 playerPosition = other.transform.position;
+            Vector3 directionToPlayer = new Vector3(playerPosition.x - transform.position.x, 0, playerPosition.z - transform.position.z);
+            //directionToPlayer.Normalize();
 
-                playerRigidbody.velocity = Vector3.zero;
-                playerRigidbody.angularVelocity = Vector3.zero;
+            if (other.GetComponent<PlayerControl>() != null) other.GetComponent<PlayerControl>().LockMovement(true);
+            if (other.GetComponent<BotNoNetwork>() != null) other.GetComponent<BotNoNetwork>().LockMovement(true);
+            if (other.GetComponent<NPCController>() != null) other.GetComponent<NPCController>().LockMovement(true);
 
-                Vector3 jumpDirection;
+            playerRigidbody.velocity = Vector3.zero;
+            playerRigidbody.angularVelocity = Vector3.zero;
 
-                if (isRepel)
-                {
-                    jumpDirection = transform.up * jumpForce + (transform.right * directionToPlayer.x + transform.forward * directionToPlayer.z) * forwardForce; //Calcular la dirección combinada hacia el Player y hacia arriba
-                }
-                else
-                {
-                    playerRigidbody.rotation = Quaternion.identity;
-                    jumpDirection = transform.up * jumpForce + transform.forward * forwardForce; //Calcular la dirección combinada hacia adelante y hacia arriba
-                }
+            Vector3 jumpDirection;
 
-                // Aplicar la fuerza combinada
-                playerRigidbody.AddForce(jumpDirection, ForceMode.VelocityChange);
+            if (isRepel) {
+                jumpDirection = other.transform.up * jumpForce + (other.transform.right * directionToPlayer.x + other.transform.forward * directionToPlayer.z) * forwardForce; //Calcular la dirección combinada hacia el Player y hacia arriba
             }
+            else {
+                playerRigidbody.rotation = Quaternion.identity;
+                jumpDirection = other.transform.up * jumpForce + other.transform.forward * forwardForce; //Calcular la dirección combinada hacia adelante y hacia arriba
+            }
+
+            // Aplicar la fuerza combinada
+            playerRigidbody.AddForce(jumpDirection, ForceMode.VelocityChange);
         }
     }
 }
