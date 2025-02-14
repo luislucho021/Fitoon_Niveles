@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5348476070930941697}
   - component: {fileID: 5348476070930941696}
   - component: {fileID: 5348476070930941703}
-  - component: {fileID: 5348476070930941702}
   - component: {fileID: 5348476070930941701}
   - component: {fileID: 5348476070930941700}
   - component: {fileID: 5348476070930941707}
@@ -72,20 +71,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5348476070930941702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2697601424724991867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 062c04806adbd4e42a4ac03f44ca5128, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 0}
-  trailBoost: {fileID: 8613211236846804281}
 --- !u!114 &5348476070930941701
 MonoBehaviour:
   m_ObjectHideFlags: 0

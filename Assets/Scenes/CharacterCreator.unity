@@ -3672,7 +3672,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 993146022}
-  - component: {fileID: 993146026}
   - component: {fileID: 993146028}
   - component: {fileID: 993146021}
   - component: {fileID: 993146023}
@@ -3770,33 +3769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9566431fc4b49543808c656bb6fa50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &993146026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 993146020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4194d1097cce0c4b955b9ef1a50f77a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    username: 
-    normalCoins: 0
-    points: 0
-    purchasedSkins: 
-    purchasedShoes: 
-    purchasedColors: 
-    playerCharacterData:
-      characterName: Juan
-      hairColor: '#4D2413'
-      skinColor: '#A87458'
-      topColor: '#B46600'
-      bottomColor: '#4F2F12'
-      shoes: 0
-    scenesPlayed: []
 --- !u!114 &993146027
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using TMPro;
 using UnityEngine.UI;
 public class Tienda : MonoBehaviour
 {
-    SaveData saveData;
     public List<IconTienda> itemsByCategory;
     public GameObject iconPrefab;
     public GameObject gameManager;
@@ -14,7 +13,6 @@ public class Tienda : MonoBehaviour
     RectTransform item;
     void Start()
     {
-        saveData = FindAnyObjectByType<SaveData>();
         scrollRect = FindObjectOfType<ScrollRect>();
         item = container.GetComponent<RectTransform>();
         CleanShop();
@@ -30,7 +28,7 @@ public class Tienda : MonoBehaviour
     }
     private void CreateShop()
     {
-        saveData.ReadFromJson();
+		SaveData.ReadFromJson();
         for (int i = 0; i < itemsByCategory.Count; i++)
         {
             GameObject iconoCreado = Instantiate(iconPrefab, container.transform);
@@ -49,9 +47,9 @@ public class Tienda : MonoBehaviour
             iconTiendaActual.itemID = i;
             iconoCreado.GetComponent<ShopItem>().iconTiendaPropio = iconTiendaActual;
 
-            if ((saveData.player.purchasedSkins.Contains(i) && iconTiendaActual.itemType.ToString() == "SKIN") || 
-                (saveData.player.purchasedShoes.Contains(i) && iconTiendaActual.itemType.ToString() == "SHOE") || 
-                (saveData.player.purchasedColors.Contains(i) && iconTiendaActual.itemType.ToString() == "COLOR"))
+            if ((SaveData.player.purchasedSkins.Contains(i) && iconTiendaActual.itemType.ToString() == "SKIN") || 
+                (SaveData.player.purchasedShoes.Contains(i) && iconTiendaActual.itemType.ToString() == "SHOE") || 
+                (SaveData.player.purchasedColors.Contains(i) && iconTiendaActual.itemType.ToString() == "COLOR"))
             {
                 //Change the item to purchased aspect
                 transform.GetChild(i).GetChild(0).gameObject.SetActive(false);

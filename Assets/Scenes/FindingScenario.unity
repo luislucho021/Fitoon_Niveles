@@ -132,9 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 374919197}
-  - component: {fileID: 374919196}
   - component: {fileID: 374919198}
-  - component: {fileID: 374919199}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -142,33 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &374919196
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374919195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4194d1097cce0c4b955b9ef1a50f77a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    username: 
-    normalCoins: 0
-    points: 0
-    purchasedSkins: 
-    purchasedShoes: 
-    purchasedColors: 
-    playerCharacterData:
-      characterName: 
-      hairColor: 
-      skinColor: 
-      topColor: 
-      bottomColor: 
-      shoes: 0
-    scenesPlayed: []
 --- !u!4 &374919197
 Transform:
   m_ObjectHideFlags: 0
@@ -198,26 +169,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   escenarios:
   - {fileID: 11400000, guid: f233fc6485c72e948911f4e60813b190, type: 2}
-  - {fileID: 11400000, guid: 8369127b0f33c8c4e8d4ac09608c84eb, type: 2}
-  - {fileID: 11400000, guid: fb6d688a0d8459444a6ae02d7fdbf47f, type: 2}
   escenariosDisponibles: []
   container: {fileID: 638254325}
   countdownText: {fileID: 747954307}
   countdown: 3
   secondsToChange: 0.1
   totalSeconds: 5
---- !u!114 &374919199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374919195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9566431fc4b49543808c656bb6fa50c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &638254325
 GameObject:
   m_ObjectHideFlags: 0

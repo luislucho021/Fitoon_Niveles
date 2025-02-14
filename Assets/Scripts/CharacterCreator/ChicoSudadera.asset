@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Diego
   prefab: {fileID: 2914629327372680257, guid: 507b00a21ef43a745be15841d49d108d, type: 3}
+  prefabId: 4
   hair: {fileID: 2100000, guid: 3422440e648480a4f8ec756382c86aef, type: 2}
   skin: {fileID: 2100000, guid: e66068e2c142bf5408c7829e622eb0ce, type: 2}
   top: {fileID: 2100000, guid: 86cecc6124531674b977e481715abea6, type: 2}

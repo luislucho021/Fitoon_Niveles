@@ -984,7 +984,6 @@ GameObject:
   - component: {fileID: 8998448321280030257}
   - component: {fileID: 521287158}
   - component: {fileID: 521287157}
-  - component: {fileID: 1356138895476756307}
   - component: {fileID: 2355253033629851648}
   m_Layer: 3
   m_Name: ChicoGorro
@@ -1055,18 +1054,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fb5a9facaf4b4b4388a791c15db10a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1356138895476756307
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2399034774071457521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65db9253f47f89c42a3eddfaea5b95e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &2355253033629851648

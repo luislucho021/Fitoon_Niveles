@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="77a9b37a-10da-4a2b-ba82-29adc16fd6f4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/ARCamTex.renderTexture.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Race/DoorAutoVertical.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Race/DoorAutoVertical.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Race/_OTHER/DoorAutoVertical.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Race/_OTHER/DoorAutoVertical.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Cadencia.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Cadencia/Cadencia.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Cadencia/Cadencia.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/CameraManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/CameraManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/DemoCameras.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/DemoCameras.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/DemoController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/DemoController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/FPSDisplay.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/FPSDisplay.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/FaceTest.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/FaceTest.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/GraphRenderer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/GraphRenderer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/InteractionScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/InteractionScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/KillZone.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/KillZone.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/MetodoDerivadas.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/MetodoDerivadas.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/AuthenticationManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/AuthenticationManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/AuthenticationService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/AuthenticationService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/ClientNetworkTransform.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/ClientNetworkTransform.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/CustomNetworkRigidbody.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/CustomNetworkRigidbody.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/Matchmaking.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/Matchmaking.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkButtons.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkButtons.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkData.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkData.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkManagerUI.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkManagerUI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkRotator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkRotator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkRotatorTranslator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/NetworkRotatorTranslator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/RelayExample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Network/RelayExample.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/Bounce.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/Bounce.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/FallPlat.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/FallPlat.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/MovableObs.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/MovableObs.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/Pendulum.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/Pendulum.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/Rotation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/Rotation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/Rotator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/Rotator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/SavePos.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/SavePos.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/WallMovable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Not Implemented/WallMovable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Shouldnt Be Used.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Shouldnt Be Used/CharacterControls.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/Shouldnt Be Used/CharacterControls.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/VelocityCalculator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/_UNUSED/VelocityCalculator.cs.meta" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="2sZpEYH7cgDwpLur3raV7o2jMil" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="77a9b37a-10da-4a2b-ba82-29adc16fd6f4" name="Changes" comment="" />
+      <created>1738672841759</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1738672841759</updated>
+      <workItem from="1738672843908" duration="5000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

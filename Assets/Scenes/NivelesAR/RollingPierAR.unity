@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3974492, g: 0.8080942, b: 0.9745801, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -371,7 +371,6 @@ GameObject:
   m_Component:
   - component: {fileID: 22064661}
   - component: {fileID: 22064659}
-  - component: {fileID: 22064660}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -391,33 +390,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9566431fc4b49543808c656bb6fa50c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &22064660
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 22064658}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4194d1097cce0c4b955b9ef1a50f77a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player:
-    username: 
-    normalCoins: 0
-    points: 0
-    purchasedSkins: 
-    purchasedShoes: 
-    purchasedColors: 
-    playerCharacterData:
-      characterName: 
-      hairColor: 
-      skinColor: 
-      topColor: 
-      bottomColor: 
-      shoes: 0
-    scenesPlayed: []
 --- !u!4 &22064661
 Transform:
   m_ObjectHideFlags: 0
@@ -17445,11 +17417,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3474531062544937508, guid: 8bcc3f5a774464a4b806078d17fd8680, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000008385332
+      value: -0.000000008385331
       objectReference: {fileID: 0}
     - target: {fileID: 3474531062544937508, guid: 8bcc3f5a774464a4b806078d17fd8680, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000019238262
+      value: 0.0000000019238255
       objectReference: {fileID: 0}
     - target: {fileID: 5301710530616472752, guid: 8bcc3f5a774464a4b806078d17fd8680, type: 3}
       propertyPath: m_RootOrder
@@ -18902,7 +18874,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1473658679}
-  m_LocalRotation: {x: 0.22361772, y: 0.000000008385332, z: -0.0000000019238262, w: 0.97467697}
+  m_LocalRotation: {x: 0.22361772, y: -0.000000008385331, z: 0.0000000019238255, w: 0.97467697}
   m_LocalPosition: {x: -10.903744, y: 4.5699987, z: -8.507654}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

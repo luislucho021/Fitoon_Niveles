@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class TiendaManager : MonoBehaviour
 {
     public static TiendaManager Instance { get; private set; }
-    SaveData saveData;
     GameObject tienda;
     [SerializeField] TextMeshProUGUI shopCoins;
     GameObject panel;
@@ -32,12 +31,11 @@ public class TiendaManager : MonoBehaviour
 
     void Start()
     {
-        saveData = FindAnyObjectByType<SaveData>();
         panel = GameObject.Find("ConfirmPurchase");
         lockBackground = GameObject.Find("LockBackground");
         panel.SetActive(false);
         lockBackground.SetActive(false);
-        shopCoins.text = saveData.player.normalCoins.ToString();
+        shopCoins.text = SaveData.player.normalCoins.ToString();
     }
 
     public void PurchaseItem()
@@ -46,25 +44,25 @@ public class TiendaManager : MonoBehaviour
         switch (itemSelected.itemType)
         {
             case ItemType.SKIN:
-                saveData.player.purchasedSkins.Add(itemSelected.itemID);
+                SaveData.player.purchasedSkins.Add(itemSelected.itemID);
                 tienda = GameObject.Find("ContentSkins");
                 break;
             case ItemType.SHOE:
-                saveData.player.purchasedShoes.Add(itemSelected.itemID);
+                SaveData.player.purchasedShoes.Add(itemSelected.itemID);
                 tienda = GameObject.Find("ContentShoes");
                 break;
             case ItemType.COLOR:
-                saveData.player.purchasedColors.Add(itemSelected.itemID);
+                SaveData.player.purchasedColors.Add(itemSelected.itemID);
                 tienda = GameObject.Find("ContentColors");
                 break;
         }
 
         //Update Money
-        saveData.player.normalCoins -= itemSelected.itemPrice;
-        shopCoins.text = saveData.player.normalCoins.ToString();
+        SaveData.player.normalCoins -= itemSelected.itemPrice;
+        shopCoins.text = SaveData.player.normalCoins.ToString();
 
         //Save
-        saveData.SaveToJson();
+        SaveData.SaveToJson();
 
         //Close panel
         panel.SetActive(false);
@@ -81,9 +79,9 @@ public class TiendaManager : MonoBehaviour
         lockBackground.SetActive(true);
         itemSelected = item;
         //Read
-        saveData.ReadFromJson();
+        SaveData.ReadFromJson();
 
-        if (saveData.player.normalCoins >= item.itemPrice)
+        if (SaveData.player.normalCoins >= item.itemPrice)
         {
             panel.GetComponentInChildren<TextMeshProUGUI>().text = "Do you want to buy this item?";
             panel.transform.GetChild(1).gameObject.SetActive(true);
