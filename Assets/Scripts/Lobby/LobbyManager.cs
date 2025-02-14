@@ -15,19 +15,18 @@ public class LobbyManager : NetworkBehaviour
 {
 	[SerializeField] GameObject entryPrefab;
 	[SerializeField] ScrollRect scrollRect;
-	[SerializeField] GameObject content;
-	[SerializeField] Text testText;
+	[SerializeField] public GameObject content;
 
-	public override void OnStartClient()
+	public static LobbyManager Instance;
+	List<NetworkObject> entries = new List<NetworkObject> ();
+
+	private void Awake()
 	{
-		Debug.Log("I'm a Client!");
-		testText.text = "I'm a Client";
-		SaveData.ReadFromJson();
-		AddPlayerToRaceRpc();
-		UpdateList(SaveData.player.playerCharacterData.characterName);
-
+		if (Instance == null)
+			Instance = this;
+		else
+			Destroy(gameObject);
 	}
-
 	public override void OnStartServer()
 	{
 		InstanceFinder.NetworkManager.ClientManager.StartConnection();
@@ -38,42 +37,31 @@ public class LobbyManager : NetworkBehaviour
 
 	private void OnClientConnected(NetworkConnection connection, bool arg2)
 	{
-		if (arg2)
+		if (!arg2)
 		{
-			Debug.Log("Client has connected to me");
+			Debug.Log("Problem");
+			return;
 		}
-		else
-			Debug.Log("Something went wrong");
+		UpdateListForNewClient(connection);
 	}
 
-
-	private void Update()
-	{
-		if(IsServerInitialized)
-		{
-			testText.text = "I'm a Server ";
-			testText.text += InstanceFinder.NetworkManager.ServerManager.Clients.Count;
-		}
-		Debug.Log("Client Initialized: " + IsClientInitialized);
-		Debug.Log("Server Initialized: " + IsServerInitialized);
-		Debug.Log("Host Initialized: " + IsHostInitialized);
-	}
-
-	[ServerRpc]
-    void AddPlayerToRaceRpc()
+    public void UpdateList(string name)
     {
-        GameManager.AddPlayer();
-	}
-
-    [ObserversRpc]
-    void UpdateList(string name)
-    {
-        GameObject entry = Instantiate(entryPrefab, content.transform);
+        NetworkObject entry = Instantiate(entryPrefab, content.transform).GetComponent<NetworkObject>();
+		InstanceFinder.NetworkManager.ServerManager.Spawn(entry);
 		entry.name = name;
         entry.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = name;
+		entry.GetComponent<PlayerCard>().SetName(name);
 		Canvas.ForceUpdateCanvases();
 		//ScrollViewFocusFunctions.FocusOnItem(scrollRect, playerEntry);
 		StartCoroutine(ScrollViewFocusFunctions.FocusOnItemCoroutine(scrollRect, entry.GetComponent<RectTransform>(), 0.5f));
 	}
 	
+	void UpdateListForNewClient(NetworkConnection connection)
+	{
+		foreach(NetworkObject entry in entries)
+		{
+			entry.GetComponent<PlayerCard>().SetName(connection, entry.name);
+		}
+	}
 }
