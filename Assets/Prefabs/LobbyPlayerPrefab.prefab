@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 9073788942101935070}
   - component: {fileID: 2082762476636234298}
   - component: {fileID: 2448226983199181525}
+  - component: {fileID: -8893732436374618951}
   m_Layer: 0
   m_Name: LobbyPlayerPrefab
   m_TagString: Untagged
@@ -337,3 +338,11 @@ MonoBehaviour:
   _componentIndexCache: 0
   _addedNetworkObject: {fileID: 2082762476636234298}
   _networkObjectCache: {fileID: 2082762476636234298}
+--- !u!81 &-8893732436374618951
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7519999625906144105}
+  m_Enabled: 1
