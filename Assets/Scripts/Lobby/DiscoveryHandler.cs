@@ -1,7 +1,6 @@
 using FishNet.Discovery;
 using FishNet.Managing;
 using FishNet.Object;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -9,21 +8,45 @@ using UnityEngine;
 
 public class DiscoveryHandler : MonoBehaviour
 {
+	public static DiscoveryHandler Instance;
+	public static string Passcode;
 	NetworkDiscovery netDiscovery;
 	[SerializeField] NetworkManager networkManager;
 	[SerializeField] ushort port = 7077;
 
 	void Start()
-    {
+	{
+		if(Passcode == null)
+		{
+			Passcode = "qaszdfgbjhgfvgc12345WSYI/(UFYVCUfycfucr";
+		}
 		netDiscovery = networkManager.GetComponent<NetworkDiscovery>();
-		netDiscovery.SearchForServers();
+		netDiscovery.ChangeSecret(Passcode);
 		netDiscovery.ServerFoundCallback += ConnectToServer;
+		if (Instance != null)
+		{
+			Destroy(gameObject);
+			return;
+		}
+
+		Instance = this;
+		BeginSearch();
+	}
+
+	void OnDestroy()
+	{
+		netDiscovery.ServerFoundCallback -= ConnectToServer;
+	}
+
+	public void BeginSearch()
+	{
+		Debug.Log("Searching. . . ");
+		netDiscovery.SearchForServers();
 		StartCoroutine(SearchTimeOut());
 	}
 
 	private void ConnectToServer(IPEndPoint point)
 	{
-		netDiscovery.ServerFoundCallback -= ConnectToServer;
 		StopAllCoroutines();
 		netDiscovery.StopSearchingOrAdvertising();
 		networkManager.ClientManager.StartConnection(point.Address.ToString(), port);
@@ -31,7 +54,7 @@ public class DiscoveryHandler : MonoBehaviour
 
 	IEnumerator SearchTimeOut()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(Random.Range(2, 3f));
 		if (netDiscovery.IsSearching)
 		{
 			netDiscovery.ServerFoundCallback -= ConnectToServer;

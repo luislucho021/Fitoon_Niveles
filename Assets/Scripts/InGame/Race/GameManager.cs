@@ -188,6 +188,11 @@ public class GameManager : NetworkBehaviour
         numberOfPlayers++;
     }
 
+    public static void RemovePlayer()
+    {
+        numberOfPlayers--;
+    }
+
     public static void AddPlayerToRace(PlayerController player)//Probablemente habrá que cambiarlo para networking
     {
         if(runners == null)
