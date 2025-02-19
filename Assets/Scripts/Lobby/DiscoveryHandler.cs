@@ -1,7 +1,6 @@
 using FishNet.Discovery;
 using FishNet.Managing;
 using FishNet.Object;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
@@ -9,44 +8,58 @@ using UnityEngine;
 
 public class DiscoveryHandler : MonoBehaviour
 {
+	public static DiscoveryHandler Instance;
+	public static string Passcode;
 	NetworkDiscovery netDiscovery;
 	[SerializeField] NetworkManager networkManager;
-	[SerializeField] NetworkBehaviour lobbyHandler;
+	[SerializeField] ushort port = 7077;
 
-	// Start is called before the first frame update
 	void Start()
-    {
-		Debug.Log("Start");
+	{
+		if(Passcode == null)
+		{
+			Passcode = "qaszdfgbjhgfvgc12345WSYI/(UFYVCUfycfucr";
+		}
 		netDiscovery = networkManager.GetComponent<NetworkDiscovery>();
-		netDiscovery.SearchForServers();
+		netDiscovery.ChangeSecret(Passcode);
 		netDiscovery.ServerFoundCallback += ConnectToServer;
+		if (Instance != null)
+		{
+			Destroy(gameObject);
+			return;
+		}
+
+		Instance = this;
+		BeginSearch();
+	}
+
+	void OnDestroy()
+	{
+		netDiscovery.ServerFoundCallback -= ConnectToServer;
+	}
+
+	public void BeginSearch()
+	{
+		Debug.Log("Searching. . . ");
+		netDiscovery.SearchForServers();
 		StartCoroutine(SearchTimeOut());
 	}
 
 	private void ConnectToServer(IPEndPoint point)
 	{
-		netDiscovery.ServerFoundCallback -= ConnectToServer;
-		Debug.Log("Server Found : " + point.Address.ToString() + (ushort)point.Port);
 		StopAllCoroutines();
 		netDiscovery.StopSearchingOrAdvertising();
-		networkManager.ClientManager.StartConnection(point.Address.ToString(), 7077);
-	}
-
-	private void Update()
-	{
-		Debug.Log("Is client: " + networkManager.ClientManager.Started + " ");
-		Debug.Log("Is server: " + networkManager.ServerManager.Started + " ");
+		networkManager.ClientManager.StartConnection(point.Address.ToString(), port);
 	}
 
 	IEnumerator SearchTimeOut()
 	{
-		Debug.Log("Searching");
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(Random.Range(2, 3f));
 		if (netDiscovery.IsSearching)
 		{
 			netDiscovery.ServerFoundCallback -= ConnectToServer;
 			netDiscovery.StopSearchingOrAdvertising();
-			networkManager.ServerManager.StartConnection(7077);
+			networkManager.ServerManager.StartConnection(port);
 			netDiscovery.AdvertiseServer();
 		}
 	}

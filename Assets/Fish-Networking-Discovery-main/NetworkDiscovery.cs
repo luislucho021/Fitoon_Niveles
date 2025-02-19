@@ -401,5 +401,11 @@ namespace FishNet.Discovery
 		{
 			if (NetworkManagerExtensions.CanLog(LoggingType.Error)) Debug.LogError($"[{nameof(NetworkDiscovery)}] {message}", this);
 		}
+
+		public void ChangeSecret(string s)
+		{
+			secret = s;
+			_secretBytes = Encoding.UTF8.GetBytes(secret);
+		}
 	}
 }

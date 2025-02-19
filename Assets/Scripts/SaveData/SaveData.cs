@@ -7,7 +7,7 @@ using UnityEngine.Android;
 public static class SaveData
 {
     public static PlayerData player;
-    
+    static string filePath = Path.Combine(Application.dataPath, "PlayerData.json");
     public static void SaveToJson()
     {
         if (player == null)
@@ -17,7 +17,6 @@ public static class SaveData
         }
 
         string playerData = JsonUtility.ToJson(player);
-        string filePath = System.IO.Path.Combine(Application.persistentDataPath,"PlayerData.json");
         System.IO.File.WriteAllText(filePath, playerData);
         //Si está vacío poner un personaje default
         if (player.playerCharacterData is null)
@@ -42,8 +41,6 @@ public static class SaveData
 
     public static void ReadFromJson()
     {
-        string filePath = System.IO.Path.Combine(Application.persistentDataPath, "PlayerData.json");
-
         try
         {
             string playerData = System.IO.File.ReadAllText(filePath);
