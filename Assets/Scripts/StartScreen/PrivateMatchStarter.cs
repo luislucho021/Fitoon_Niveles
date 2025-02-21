@@ -19,10 +19,12 @@ public class PrivateMatchStarter : MonoBehaviour
     }
     public void StartGame()
     {
-        if (inputField.text == "")
-            return;
-
         DiscoveryHandler.Passcode = inputField.text;
-        SceneManager.LoadScene("LobbyScene");
+
+		SceneManager.LoadScene("LobbyScene");
     }
+    public void SetPasscode(string value)
+    {
+		DiscoveryHandler.Passcode = value;
+	}
 }

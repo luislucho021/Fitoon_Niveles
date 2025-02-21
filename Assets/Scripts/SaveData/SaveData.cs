@@ -7,7 +7,7 @@ using UnityEngine.Android;
 public static class SaveData
 {
     public static PlayerData player;
-    static string filePath = Path.Combine(Application.dataPath, "PlayerData.json");
+    static string filePath = Path.Combine(Application.persistentDataPath, "PlayerData.json");
     public static void SaveToJson()
     {
         if (player == null)
