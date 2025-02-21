@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InitialScreen : MonoBehaviour
 {
@@ -117,4 +118,10 @@ public class InitialScreen : MonoBehaviour
         SaveData.player.scenesPlayed.Clear();
         SaveData.SaveToJson();
     }
+
+    public void StartGame()
+    {
+        DiscoveryHandler.Passcode = null;
+        SceneManager.LoadScene("LobbyScene");
+	}
 }
