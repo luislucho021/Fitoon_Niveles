@@ -212,7 +212,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 2.4
+  m_PixelsPerUnitMultiplier: 2.12
 --- !u!114 &4677823834021411060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,7 +342,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 26.099998, y: -20.1}
-  m_SizeDelta: {x: 200, y: 83.6}
+  m_SizeDelta: {x: 280.2, y: 83.6}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &3387427420721831002
 CanvasRenderer:

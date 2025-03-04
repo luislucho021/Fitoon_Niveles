@@ -9,19 +9,19 @@ EditorBuildSettings:
     path: Assets/Scenes/_UNUSED/PRUEBA1.unity
     guid: ab4d5c673f2b86b419bbc55b675ef850
   - enabled: 1
-    path: Assets/Scenes/InicialAntiguo.unity
+    path: Assets/Scenes/ANTIGUA UI/InicialAntiguo.unity
     guid: 637bfc521f159a442bdf6009e5d3ad12
   - enabled: 1
-    path: Assets/Scenes/CharacterCreator.unity
+    path: Assets/Scenes/ANTIGUA UI/CharacterCreator.unity
     guid: a21a597e524912b41993821a16f98613
   - enabled: 1
-    path: Assets/Scenes/Tienda.unity
+    path: Assets/Scenes/ANTIGUA UI/Tienda.unity
     guid: ed99ad9ac867ef947a0ff16156d613cc
   - enabled: 1
     path: Assets/Scenes/LobbyScene.unity
     guid: c78f77aef35cdec458af96d9d51d93c3
   - enabled: 0
-    path: Assets/Scenes/FindingScenario.unity
+    path: Assets/Scenes/ANTIGUA UI/FindingScenario.unity
     guid: e2519767f6c1f0b4c9c101aea80a6b19
   - enabled: 0
     path: Assets/Scenes/NivelesAR/DizzyHeightAR.unity
@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/NivelesAR/SpaceTravelAR.unity
     guid: e542ea5018f962e4a9e8558de3f81380
   - enabled: 0
-    path: Assets/Scenes/YouLose.unity
+    path: Assets/Scenes/ANTIGUA UI/YouLose.unity
     guid: 8146d4752f8b207499ef242e5797d501
   - enabled: 0
     path: Assets/Scenes/Tests/Ajustes.unity
@@ -45,16 +45,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Tests/Pointer/PUNTERO.unity
     guid: afed212571a198c4396a5272993ff0da
   - enabled: 0
-    path: Assets/Scenes/Classified.unity
+    path: Assets/Scenes/ANTIGUA UI/Classified.unity
     guid: 2ba823a149c4a6744b15e1ef3c092ba4
   - enabled: 0
-    path: Assets/Scenes/YouWin.unity
+    path: Assets/Scenes/ANTIGUA UI/YouWin.unity
     guid: 4bd9bba55e7aa5847973b45d031e5f48
   - enabled: 0
     path: Assets/Scenes/NivelesAR/DizzyHeightAR 1.unity
     guid: c9e136f19b5601641bb65eb56c431685
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
+    path: Assets/Scenes/ANTIGUA UI/Settings.unity
     guid: 690dfcb43e70f8440bd87521443c1e3e
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: c175f3a20621136409bd2d6e59083b3e, type: 2}
