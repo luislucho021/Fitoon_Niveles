@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_EggDarkGreen
-  m_Shader: {fileID: 4800000, guid: 9e0b78a84584ffb4b9d963b4c6f26436, type: 3}
+  m_Name: M_Bumper 3
+  m_Shader: {fileID: 4800000, guid: 8fa84e1c8f3a97b4bb416e8eb087630e, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
@@ -27,7 +27,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 3, y: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
         m_Texture: {fileID: 0}
@@ -39,7 +39,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 10, y: 10}
+        m_Scale: {x: 4, y: 4}
         m_Offset: {x: 0, y: 0}
     - _EmmisTex:
         m_Texture: {fileID: 0}
@@ -47,7 +47,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 10, y: 6}
+        m_Scale: {x: 4, y: 4}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -74,18 +74,18 @@ Material:
     - _FresnelBrightness: 0
     - _FresnelPower: 0
     - _FresnelShadowDropoff: 0
-    - _GlossMapScale: 1
-    - _Glossiness: 0.845
+    - _GlossMapScale: 0.7
+    - _Glossiness: 0.774
     - _GlossyReflections: 1
-    - _HighIntensity: 2.83
-    - _LightScalar: 1
+    - _HighIntensity: 2.74
+    - _LightScalar: 1.6
     - _LowIntensity: 1
-    - _Metallic: 0.2
+    - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _OutlineSize: 10
+    - _OutlineSize: 0
     - _Parallax: 0.02
-    - _RampLevels: 6
+    - _RampLevels: 2
     - _RimAlpha: 0
     - _RimDropOff: 0
     - _RimPower: 0
@@ -95,8 +95,8 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.13333333, g: 0.7647059, b: 0.5655301, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.46226418, g: 0.34917086, b: 0.20714669, a: 1}
+    - _EmissionColor: {r: 0.5, g: 0.14313726, b: 0.015686274, a: 1}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
     - _HighColor: {r: 1, g: 1, b: 1, a: 1}
     - _LowColor: {r: 1, g: 1, b: 1, a: 1}
